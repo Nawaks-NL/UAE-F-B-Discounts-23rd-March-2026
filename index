@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAE F&B Promotions Guide — March 2026</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --surface: #ffffff;
+    --surface-alt: #fbfbfd;
+    --border: #d2d2d7;
+    --border-light: #e8e8ed;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-tertiary: #86868b;
+    --blue: #0071e3;
+    --blue-bg: rgba(0,113,227,0.09);
+    --red: #ff3b30;     --red-bg: rgba(255,59,48,0.09);
+    --pink: #ff2d55;    --pink-bg: rgba(255,45,85,0.09);
+    --orange: #ff9500;  --orange-bg: rgba(255,149,0,0.09);
+    --purple: #5856d6;  --purple-bg: rgba(88,86,214,0.09);
+    --teal: #32ade6;    --teal-bg: rgba(50,173,230,0.09);
+    --green: #34c759;   --green-bg: rgba(52,199,89,0.09);
+    --indigo: #5e5ce6;  --indigo-bg: rgba(94,92,230,0.09);
+    --aqua: #00c7be;    --aqua-bg: rgba(0,199,190,0.09);
+    --gray: #636366;    --gray-bg: rgba(99,99,102,0.09);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 200;
+    background: rgba(255,255,255,0.84);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 28px;
+    height: 52px; display: flex; align-items: center; gap: 14px;
+  }
+  .nav-logo { font-size: 1rem; font-weight: 600; letter-spacing: -0.2px; color: var(--text-primary); flex-shrink: 0; }
+  .nav-logo span { color: var(--text-secondary); font-weight: 400; }
+  .search-wrap { position: relative; flex: 1; max-width: 300px; margin-left: auto; }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); pointer-events: none; }
+  #searchInput {
+    width: 100%; background: rgba(0,0,0,0.05); border: none; border-radius: 10px;
+    color: var(--text-primary); font-family: inherit; font-size: 0.84rem;
+    padding: 7px 12px 7px 32px; outline: none; transition: background 0.15s, box-shadow 0.15s;
+  }
+  #searchInput:focus { background: #fff; box-shadow: 0 0 0 3px rgba(0,113,227,0.28); }
+  #searchInput::placeholder { color: var(--text-tertiary); }
+  .count-pill { font-size: 0.78rem; color: var(--text-tertiary); white-space: nowrap; flex-shrink: 0; }
+  .count-pill strong { color: var(--blue); font-weight: 600; }
+
+  /* HERO */
+  .hero { background: var(--surface); border-bottom: 0.5px solid var(--border-light); padding: 52px 28px 40px; text-align: center; }
+  .hero-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+  .hero h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.07; color: var(--text-primary); }
+  .hero p { color: var(--text-secondary); font-size: 1rem; margin-top: 10px; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .hero-stats { display: flex; justify-content: center; gap: 44px; margin-top: 32px; flex-wrap: wrap; }
+  .hero-stat .val { display: block; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.02em; }
+  .hero-stat .lbl { display: block; font-size: 0.76rem; color: var(--text-tertiary); margin-top: 2px; }
+
+  /* FILTER BAR */
+  .filter-bar { background: var(--surface); border-bottom: 0.5px solid var(--border-light); padding: 0 28px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; gap: 4px; padding: 10px 0; align-items: center; flex-wrap: wrap; }
+  .f-btn {
+    background: none; border: 1px solid transparent; border-radius: 980px;
+    color: var(--text-secondary); cursor: pointer; font-family: inherit; font-size: 0.79rem;
+    font-weight: 500; padding: 6px 14px; transition: all 0.15s; white-space: nowrap;
+  }
+  .f-btn:hover { background: rgba(0,0,0,0.04); color: var(--text-primary); }
+  .f-btn.active { background: var(--text-primary); border-color: var(--text-primary); color: #fff; }
+
+  /* TABLE */
+  .table-outer { max-width: 1280px; margin: 24px auto 60px; padding: 0 28px; }
+  .table-card {
+    background: var(--surface); border: 0.5px solid var(--border); border-radius: 18px;
+    overflow-x: auto; box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  }
+  table { width: 100%; border-collapse: collapse; table-layout: auto; min-width: 1100px; }
+
+  thead th {
+    background: var(--surface-alt); border-bottom: 0.5px solid var(--border);
+    color: var(--text-tertiary); cursor: pointer; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.06em; padding: 12px 16px; text-align: left; text-transform: uppercase;
+    user-select: none; white-space: nowrap; transition: color 0.15s;
+  }
+  thead th:hover { color: var(--text-primary); }
+  thead th.sorted { color: var(--blue); }
+  .sort-icon { margin-left: 3px; display: inline-block; }
+  thead th:not(.sorted) .sort-icon { opacity: 0.3; }
+
+  tbody tr { transition: background 0.1s; }
+  tbody tr:not(:last-child) td { border-bottom: 0.5px solid var(--border-light); }
+  tbody tr:hover td { background: rgba(0,113,227,0.03); }
+
+  td { font-size: 0.83rem; padding: 13px 16px; vertical-align: top; color: var(--text-primary); }
+
+  .td-num { color: var(--text-tertiary); font-size: 0.74rem; font-variant-numeric: tabular-nums; width: 38px; text-align: center; }
+
+  /* CATEGORY BADGE */
+  .badge { border-radius: 980px; display: inline-block; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.04em; padding: 3px 9px; text-transform: uppercase; white-space: nowrap; }
+  .b-solidarity { color: var(--red);    background: var(--red-bg); }
+  .b-happyhour  { color: var(--blue);   background: var(--blue-bg); }
+  .b-happy      { color: var(--blue);   background: var(--blue-bg); }
+  .b-ladies     { color: var(--pink);   background: var(--pink-bg); }
+  .b-brunch     { color: var(--orange); background: var(--orange-bg); }
+  .b-biz        { color: var(--purple); background: var(--purple-bg); }
+  .b-weekly     { color: var(--teal);   background: var(--teal-bg); }
+  .b-platform   { color: var(--green);  background: var(--green-bg); }
+  .b-hotel      { color: var(--indigo); background: var(--indigo-bg); }
+  .b-beach      { color: var(--aqua);   background: var(--aqua-bg); }
+  .b-special    { color: var(--gray);   background: var(--gray-bg); }
+  .b-staycation  { background:rgba(0,150,100,0.12); color:#00966e; border-color:rgba(0,150,100,0.25); }
+  .b-entertainment { background:rgba(255,149,0,0.12); color:#c96a00; border-color:rgba(255,149,0,0.3); }
+  .b-italian       { background:rgba(206,43,55,0.10); color:#b52430; border-color:rgba(206,43,55,0.25); }
+  .b-japanese      { background:rgba(210,38,48,0.09); color:#9c1f2e; border-color:rgba(210,38,48,0.2); }
+  .b-perulatin     { background:rgba(230,126,34,0.12); color:#b85e0d; border-color:rgba(230,126,34,0.28); }
+  .b-korean        { background:rgba(0,86,179,0.10); color:#0056b3; border-color:rgba(0,86,179,0.25); }
+  .b-allday        { background:rgba(100,160,60,0.11); color:#4a7c25; border-color:rgba(100,160,60,0.28); }
+
+  /* VENUE — wider, no max-width cap */
+  .venue-name { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); line-height: 1.45; min-width: 200px; }
+
+  .loc  { color: var(--text-secondary); font-size: 0.8rem; min-width: 110px; line-height: 1.4; }
+  .deal { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.5; min-width: 200px; max-width: 260px; }
+
+  .saving { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+  .saving.free { color: var(--red); }
+
+  .period { color: var(--text-tertiary); font-size: 0.78rem; white-space: nowrap; }
+
+  /* INSTAGRAM */
+  .ig-btn {
+    align-items: center; border-radius: 8px; border: 1px solid var(--border);
+    color: var(--text-secondary); display: inline-flex; font-size: 0.74rem; font-weight: 500;
+    gap: 5px; padding: 5px 10px; text-decoration: none; transition: all 0.15s;
+    white-space: nowrap; background: var(--surface);
+  }
+  .ig-btn:hover { border-color: transparent; background: linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45); color:#fff; box-shadow:0 2px 8px rgba(131,58,180,0.25); }
+  .no-ig { color: var(--border); font-size: 0.74rem; }
+
+  .empty { padding: 64px 24px; text-align: center; color: var(--text-tertiary); }
+  .empty p { font-size: 0.9rem; margin-top: 8px; }
+
+  .footer { text-align: center; padding: 24px; color: var(--text-tertiary); font-size: 0.76rem; border-top: 0.5px solid var(--border-light); }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 1.7rem; }
+    .table-outer { padding: 0 10px; margin-top: 14px; }
+    .hero { padding: 32px 16px 24px; }
+    .nav-inner { padding: 0 16px; }
+  }
+
+  /* REFERENCE LINK */
+  .ref-btn {
+    align-items: center; border-radius: 8px; border: 1px solid var(--border);
+    color: var(--text-secondary); display: inline-flex; font-size: 0.74rem; font-weight: 500;
+    gap: 5px; padding: 5px 10px; text-decoration: none; transition: all 0.15s;
+    white-space: nowrap; background: var(--surface);
+  }
+  .ref-btn:hover { border-color: var(--blue); background: var(--blue-bg); color: var(--blue); box-shadow: 0 2px 8px rgba(0,113,227,0.15); }
+  .no-ref { color: var(--border); font-size: 0.74rem; }
+
+  /* PERIOD EXPIRY */
+  .period-expired { color: var(--red); font-weight: 600; }
+  .period-expired::after { content: ' ✕'; font-size: 0.7em; opacity: 0.7; }
+  .period-urgent  { color: var(--red); font-weight: 500; }
+  .period-urgent::after  { content: ' ⚠'; font-size: 0.7em; }
+  .period-soon    { color: var(--orange); font-weight: 500; }
+  .period-soon::after    { content: ' ⏱'; font-size: 0.7em; }
+
+  /* BOOKING BADGE */
+  .book-tag {
+    display: inline-block; margin-left: 7px; padding: 2px 7px;
+    border-radius: 5px; font-size: 0.64rem; font-weight: 600;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    background: rgba(88,86,214,0.10); color: var(--purple);
+    border: 0.5px solid rgba(88,86,214,0.22); white-space: nowrap;
+    vertical-align: middle;
+  }
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">UAE F&amp;B <span>Promotions Guide</span></div>
+    <div class="search-wrap">
+      <svg class="search-icon" width="13" height="13" viewBox="0 0 20 20" fill="none">
+        <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16z" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M19 19l-4.35-4.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search venues, deals, locations…">
+    </div>
+    <div class="count-pill">Showing <strong id="shownCount">180</strong> of 284</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Dubai &amp; UAE · March 2026</p>
+  <h1>UAE F&amp;B Promotions &amp; Trade Rates</h1>
+  <p>A curated directory of 284 verified F&amp;B promotions, hotel packages and leisure offers across Dubai, Abu Dhabi, Ras Al Khaimah and Sharjah — updated March 2026.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="val">284</span><span class="lbl">Total Offers</span></div>
+    <div class="hero-stat"><span class="val">12</span><span class="lbl">Categories</span></div>
+    <div class="hero-stat"><span class="val">100+</span><span class="lbl">Instagram handles</span></div>
+    <div class="hero-stat"><span class="val">4</span><span class="lbl">Emirates Covered</span></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="filter-bar-inner" id="filterBar">
+          <button class="f-btn" data-cat="Trade Rates">👔 Trade Rates</button>
+          <button class="f-btn" data-cat="Drinks &amp; Nightlife">🍹 Drinks &amp; Nightlife</button>
+          <button class="f-btn" data-cat="Dining Events">🥂 Dining Events</button>
+          <button class="f-btn" data-cat="Hotel Deals">🏨 Hotel Deals</button>
+          <button class="f-btn" data-cat="Leisure">🏖 Leisure</button>
+          <button class="f-btn" data-cat="Promotions">⭐ Promotions</button>
+          <button class="f-btn" data-cat="Platforms &amp; Apps">💳 Platforms &amp; Apps</button>
+          <button class="f-btn" data-cat="Italian">🍕 Italian</button>
+          <button class="f-btn" data-cat="Japanese">🍣 Japanese</button>
+          <button class="f-btn" data-cat="Latin">🌮 Latin</button>
+          <button class="f-btn" data-cat="Korean">🥢 Korean</button>
+          <button class="f-btn" data-cat="All Day Dining">☀️ All Day Dining</button>
+        </div>
+</div>
+
+<div class="table-outer">
+  <div class="table-card">
+    <table id="mainTable">
+      <thead>
+        <tr>
+          <th data-col="n" class="sorted"># <span class="sort-icon">↑</span></th>
+          <th data-col="cat">Category <span class="sort-icon">↕</span></th>
+          <th data-col="venue">Venue <span class="sort-icon">↕</span></th>
+          <th data-col="loc">Location <span class="sort-icon">↕</span></th>
+          <th data-col="deal">Promotion Details <span class="sort-icon">↕</span></th>
+          <th data-col="saving">Saving <span class="sort-icon">↕</span></th>
+          <th data-col="period">Period <span class="sort-icon">↕</span></th>
+          <th>Instagram</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="empty" id="emptyState" style="display:none;">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d2d2d7" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <p>No results — try a different search or filter.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">UAE F&amp;B Promotions Guide · March 2026 · Prices in AED unless stated · Always verify directly with venues</div>
+
+<script>
+const IG = {
+  "SHI Hospitality":        {h:"@shi.dxb",               u:"https://instagram.com/shi.dxb"},
+  "MOLI by SHI":            {h:"@molidubai",              u:"https://instagram.com/molidubai"},
+  "CLAP":                   {h:"@clapdxb",                u:"https://instagram.com/clapdxb"},
+  "LITT":                   {h:"@littbarclub",             u:"https://instagram.com/littbarclub"},
+  "Bar Du Port":             {h:"@barduportdubai",         u:"https://instagram.com/barduportdubai"},
+  "Entertainer App":        {h:"@theentertainerme",       u:"https://instagram.com/theentertainerme"},
+  "Querida DXB":            {h:"@queriadxb",              u:"https://instagram.com/queriadxb"},
+  "Jumeirah Group":         {h:"@jumeirah",               u:"https://instagram.com/jumeirah"},
+  "Address Beach Resort":   {h:"@addressbeachresort",     u:"https://instagram.com/addressbeachresort"},
+  "Fairmont The Palm":      {h:"@fairmontthepalm",        u:"https://instagram.com/fairmontthepalm"},
+  "FIVE Palm Jumeirah":     {h:"@fivepalm",               u:"https://instagram.com/fivepalm"},
+  "Hilton Palm Jumeirah":   {h:"@hiltonpalmjumeirah",     u:"https://instagram.com/hiltonpalmjumeirah"},
+  "Speakeasy":              {h:"@speakeasydubai",         u:"https://instagram.com/speakeasydubai"},
+  "Four Seasons Dubai":     {h:"@fourseasonsdubai",       u:"https://instagram.com/fourseasonsdubai"},
+  "Urban Bar & Kitchen":    {h:"@ubkdubai",               u:"https://instagram.com/ubkdubai"},
+  "The Notorious":          {h:"@thenotoriouspig.dxb",    u:"https://instagram.com/thenotoriouspig.dxb"},
+  "Icon Bar":               {h:"@iconbardubai",           u:"https://instagram.com/iconbardubai"},
+  "Roaring Rabbit":         {h:"@roaringrabbitdubai",     u:"https://instagram.com/roaringrabbitdubai"},
+  "Bliss 6":                {h:"@bliss6dubai",            u:"https://instagram.com/bliss6dubai"},
+  "Jazz @ Pizza Express":   {h:"@pizzaexpressuae",        u:"https://instagram.com/pizzaexpressuae"},
+  "Pizza Express":          {h:"@pizzaexpressuae",        u:"https://instagram.com/pizzaexpressuae"},
+  "Hoxton":                 {h:"@thehoxton",
+  u:"https://www.instagram.com/thehoxton/"},
+  "McGettigan's":           {h:"@mcgettigansjlt",         u:"https://instagram.com/mcgettigansjlt"},
+  "McGettigan's DWTC":      {h:"@mcgettigansdwtc",        u:"https://instagram.com/mcgettigansdwtc"},
+  "Goose Island Tap House": {h:"@gooseislandjbr",         u:"https://instagram.com/gooseislandjbr"},
+  "Blacksmith":             {h:"@theblacksmithdubai",     u:"https://instagram.com/theblacksmithdubai"},
+  "Distillery":             {h:"@distillerydubai",        u:"https://instagram.com/distillerydubai"},
+  "Lock, Stock & Barrel":   {h:"@lockstockuae",           u:"https://instagram.com/lockstockuae"},
+  "Lock Stock & Barrel":    {h:"@lockstockuae",           u:"https://instagram.com/lockstockuae"},
+  "O'Learys":               {h:"@olearysdubai",           u:"https://instagram.com/olearysdubai"},
+  "Ikigai":                 {h:"@ikigaidubai",            u:"https://instagram.com/ikigaidubai"},
+  "Andiamo":                {h:"@grandhyattdubai",        u:"https://instagram.com/grandhyattdubai"},
+  "Da Michele":             {h:"@damichele_uae",          u:"https://instagram.com/damichele_uae"},
+  "Nomadia":                {h:"@nomadiadubai",           u:"https://instagram.com/nomadiadubai"},
+  "Positano":               {h:"@positanodxb",            u:"https://instagram.com/positanodxb"},
+  "Asia Asia":              {h:"@asiaasiauae",            u:"https://instagram.com/asiaasiauae"},
+  "Sucre":                  {h:"@sucredubai",             u:"https://instagram.com/sucredubai"},
+  "MEDUSA":                 {h:"@medusadubai",            u:"https://instagram.com/medusadubai"},
+  "Observatory":            {h:"@observatorydubai",       u:"https://instagram.com/observatorydubai"},
+  "El Toro":                {h:"@eltoro_dubai",           u:"https://instagram.com/eltoro_dubai"},
+  "Azucar":                 {h:"@azucardubai",            u:"https://instagram.com/azucardubai"},
+  "Radisson Hotels Dubai":  {h:"@radissondubai",          u:"https://instagram.com/radissondubai"},
+  "Lavash":                 {h:"@lavashdubai",
+  u:"https://instagram.com/lavashdubai"},
+  "Cargo":                  {h:"@cargodubai",             u:"https://instagram.com/cargodubai"},
+  "Biggles":                {h:"@bigglesdubai",           u:"https://instagram.com/bigglesdubai"},
+  "Bask":                   {h:"@baskdubai",              u:"https://instagram.com/baskdubai"},
+  "Bask Beach Club":        {h:"@baskdubai",              u:"https://instagram.com/baskdubai"},
+  "Alaya":                  {h:"@alayadubai",             u:"https://instagram.com/alayadubai"},
+  "Amazónico":              {h:"@amazonicodubai",         u:"https://instagram.com/amazonicodubai"},
+  "Avli":                   {h:"@avlibytashas",           u:"https://instagram.com/avlibytashas"},
+  "Bar Des Prés":           {h:"@bardespres.dubai",       u:"https://instagram.com/bardespres.dubai"},
+  "ROKA":                   {h:"@rokadubaiofficial",      u:"https://instagram.com/rokadubaiofficial"},
+  "Milos":                  {h:"@milosdubai",             u:"https://instagram.com/milosdubai"},
+  "Eugène Eugène":          {h:"@eugeneeugenedubai",      u:"https://instagram.com/eugeneeugenedubai"},
+  "Benjarong":              {h:"@benjarongdubai",         u:"https://instagram.com/benjarongdubai"},
+  "Bla Bla":                {h:"@blabladubai",            u:"https://instagram.com/blabladubai"},
+  "HSBC":                   {h:"@hsbcuae",                u:"https://instagram.com/hsbcuae"},
+  "Zomato":                 {h:"@zomatouae",              u:"https://instagram.com/zomatouae"},
+  "Meraas":                 {h:"@meraas",                 u:"https://instagram.com/meraas"},
+  "Marriott":               {h:"@marriottdubai",          u:"https://instagram.com/marriottdubai"},
+  "Mercure Dubai":          {h:"@mercuredubai",           u:"https://instagram.com/mercuredubai"},
+  "Pullman":                {h:"@pullmanjlt",             u:"https://instagram.com/pullmanjlt"},
+  "One&Only":               {h:"@oneandonlyresorts",      u:"https://instagram.com/oneandonlyresorts"},
+  "Paramount Hotel":        {h:"@paramountdubai",         u:"https://instagram.com/paramountdubai"},
+  "Malibu Deck":            {h:"@paramountdubai",         u:"https://instagram.com/paramountdubai"},
+  "Shangri-La":             {h:"@shangrilahotels",        u:"https://instagram.com/shangrilahotels"},
+  // NEW
+  "La Coco":                {h:"@lacocodxb",              u:"https://instagram.com/lacocodxb"},
+  "Iris Dubai":             {h:"@irisdubai",              u:"https://instagram.com/irisdubai"},
+  "Kickers Sports Bar":     {h:"@kickersportsbar",        u:"https://instagram.com/kickersportsbar"},
+  "Reform Social & Grill":  {h:"@reformdubai",            u:"https://instagram.com/reformdubai"},
+  "Barfly":                 {h:"@barflybybuddhabar",      u:"https://instagram.com/barflybybuddhabar"},
+  "Fogo de Chão":           {h:"@fogodechaouae",          u:"https://instagram.com/fogodechaouae"},
+  "STK Dubai":              {h:"@stkdubaijbr",            u:"https://instagram.com/stkdubaijbr"},
+  "The MAINE":              {h:"@themainedxb",            u:"https://instagram.com/themainedxb"},
+  "SOON Izakaya":           {h:"@soondxb",                u:"https://instagram.com/soondxb"},
+  "Maiden Shanghai":        {h:"@maidenshanghaidubai",    u:"https://instagram.com/maidenshanghaidubai"},
+  "En Fuego":               {h:"@enfuegodubai",           u:"https://instagram.com/enfuegodubai"},
+  "Saffron":                {h:"@saffronbrunch",          u:"https://instagram.com/saffronbrunch"},
+  "Buddha-Bar":             {h:"@buddhabardubai",         u:"https://instagram.com/buddhabardubai"},
+  "Romeo Lane":             {h:"@romeolane.ae",           u:"https://instagram.com/romeolane.ae"},
+  "COYA Dubai":             {h:"@coyadubai",              u:"https://instagram.com/coyadubai"},
+  "Brasserie Boulud":       {h:"@brasseriebouluddubai",   u:"https://instagram.com/brasseriebouluddubai"},
+  "Spartan Sports Bar":     {h:"@spartanbardxb",          u:"https://instagram.com/spartanbardxb"},
+  "Rüya":                   {h:"@ruyadubai",              u:"https://instagram.com/ruyadubai"},
+  "Zuma Dubai":             {h:"@zumadubai",              u:"https://instagram.com/zumadubai"},
+  "Nobu Dubai":             {h:"@nobudubai",              u:"https://instagram.com/nobudubai"},
+  "Chez Wam":               {h:"@chezwamdubai",           u:"https://instagram.com/chezwamdubai"},
+  "The Guild":              {h:"@theguilddubai",          u:"https://instagram.com/theguilddubai"},
+  "Gaucho Dubai":           {h:"@gauchodubai",            u:"https://instagram.com/gauchodubai"},
+  "Nikki Beach":            {h:"@nikkibeachdubai",        u:"https://instagram.com/nikkibeachdubai"},
+  "Delano":                 {h:"@delanodubai",            u:"https://instagram.com/delanodubai"},
+  "Cove Beach":             {h:"@covebeachdubai",         u:"https://instagram.com/covebeachdubai"},
+  "Zero Gravity":           {h:"@zerogravitydubai",       u:"https://instagram.com/zerogravitydubai"},
+  "J1 Beach":               {h:"@j1beachdubai",           u:"https://instagram.com/j1beachdubai"},
+  "LPM":                    {h:"@lpmdubai",               u:"https://instagram.com/lpmdubai"},
+  "La Petite Maison":       {h:"@lpmdubai",               u:"https://instagram.com/lpmdubai"},
+  "Mythos":                 {h:"@mythosdubai",            u:"https://instagram.com/mythosdubai"},
+  "Ninive":                 {h:"@ninivedubai",            u:"https://instagram.com/ninivedubai"},
+  // BATCH 3 NEW VENUES
+  "Sexy Fish":              {h:"@sexyfishdubai",          u:"https://instagram.com/sexyfishdubai"},
+  "GABA":                   {h:"@gabadubai",              u:"https://instagram.com/gabadubai"},
+  "Fibber Magee's":         {h:"@fibbermageesdubai",      u:"https://instagram.com/fibbermageesdubai"},
+  "Indi 16":                {h:"@indi16dubai",            u:"https://instagram.com/indi16dubai"},
+  "Virgin Izakaya":         {h:"@virginizakaya",          u:"https://instagram.com/virginizakaya"},
+  "Swingers Dubai":         {h:"@swingers_uae",           u:"https://instagram.com/swingers_uae"},
+  "BrewDog Dubai":          {h:"@brewdogbluewaters",      u:"https://instagram.com/brewdogbluewaters"},
+  "Ruby Ru by Iris":        {h:"@rubyrudubai",            u:"https://instagram.com/rubyrudubai"},
+  "Sip Song":               {h:"@sipsongdubai",           u:"https://instagram.com/sipsongdubai"},
+  "BOCA":                   {h:"@bocadubai",              u:"https://instagram.com/bocadubai"},
+  "Bull & Bear":            {h:"@bullandbear.difc",       u:"https://instagram.com/bullandbear.difc"},
+  "Rowley's":               {h:"@rowleys.uae",            u:"https://instagram.com/rowleys.uae"},
+  "NONYA":                  {h:"@nonyadubai",             u:"https://instagram.com/nonyadubai"},
+  "Wet Deck":               {h:"@wetdeckdubai",           u:"https://instagram.com/wetdeckdubai"},
+  "BCH:CLB":                {h:"@bchclbdxb",              u:"https://instagram.com/bchclbdxb"},
+  "Zing Beach Bar":         {h:"@zingbeachbar",           u:"https://instagram.com/zingbeachbar"},
+  "Hotel Indigo Dubai":     {h:"@hotelindigodubai",       u:"https://instagram.com/hotelindigodubai"},
+  "Ritz-Carlton Dubai":     {h:"@ritzcarltondubai",
+  u:"https://www.instagram.com/ritzcarltondubai/"},
+  "Atlantis Dubai":         {h:"@atlantisdubai",          u:"https://instagram.com/atlantisdubai"},
+  "Anantara Palm":          {h:"@anantarapalmdubai",
+  u:"https://www.instagram.com/anantarapalmdubai/"},
+  "Smiles UAE":             {h:"@smilesapp",              u:"https://instagram.com/smilesapp"},
+  "Cobone":                 {h:"@coboneuae",              u:"https://instagram.com/coboneuae"},
+  "Hawkerboi":              {h:"@hawker.boi",             u:"https://instagram.com/hawker.boi"},
+  "Kaimana":                {h:"@kaimanabeachdubai",      u:"https://instagram.com/kaimanabeachdubai"},
+  "CARBONE Dubai":          {h:"@carbonedxb",             u:"https://instagram.com/carbonedxb"},
+  "Gymkhana DIFC":          {h:"@gymkhana_difc",
+  u:"https://www.instagram.com/gymkhana_difc/"},
+  "roka_dubai": {h:"@rokadubai", u:"https://www.instagram.com/rokadubai/"},
+  "kaimana": {h:"@kaimanabeachdubai", u:"https://www.instagram.com/kaimanabeachdubai/"},
+  "narnia_downtown": {h:"@narniadowntown", u:"https://www.instagram.com/narniadowntown/"},
+  "blacksheepdubai": {h:"@theblacksheepdubai",
+  u:"https://www.instagram.com/theblacksheepdubai/"},
+  "rodeodrivedubai": {h:"@rodeodrivedubai", u:"https://www.instagram.com/rodeodrivedubai/"},
+  "barrafinadubai": {h:"@barrafinadubai", u:"https://www.instagram.com/barrafinadubai/"},
+  "olivinowthepalm": {h:"@wdubaithepalm",
+  u:"https://www.instagram.com/wdubaithepalm/"},
+  "thelioninthesundubai": {h:"@thelioninthesundubai", u:"https://www.instagram.com/thelioninthesundubai/"},
+  "jwmarriottdubai": {h:"@jwmarriottdubai", u:"https://www.instagram.com/jwmarriottdubai/"},
+  "amgkaffehaus": {h:"@amgkaffeehausdxb",
+  u:"https://www.instagram.com/amgkaffeehausdxb/"},
+  "reformsocialgrill": {h:"@reformsocialgrill", u:"https://www.instagram.com/reformsocialgrill/"},
+  "mayabaydubai": {h:"@mayabaydubai", u:"https://www.instagram.com/mayabaydubai/"},
+  "bebeach": {h:"@bebeach", u:"https://www.instagram.com/bebeach/"},
+  "thekegroomabudhabi": {h:"@thekegroomabudhabi", u:"https://www.instagram.com/thekegroomabudhabi/"},
+  "bar_ninjas": {h:"@bar_ninjasint", u:"https://www.instagram.com/bar_ninjasint/"},
+
+  "atlantis_royal": {h:"@atlantistheroyaldubai", u:"https://www.instagram.com/atlantistheroyaldubai/"},
+  "bvlgari_dubai": {h:"@bulgariresortdubai", u:"https://www.instagram.com/bulgariresortdubai/"},
+  "jumeirahburalab": {h:"@jumeirahburalab", u:"https://www.instagram.com/jumeirahburalab/"},
+  "jumeirah_alqasr": {h:"@jumeirah_alqasr", u:"https://www.instagram.com/jumeirah_alqasr/"},
+  "oneandonlythepalm": {h:"@oneandonlythepalm", u:"https://www.instagram.com/oneandonlythepalm/"},
+  "banyantreedubaibluewaters": {h:"@banyantreedubaibluewaters", u:"https://www.instagram.com/banyantreedubaibluewaters/"},
+  "anantara_dubai_palm": {h:"@anantarapalmdubai", u:"https://www.instagram.com/anantarapalmdubai/"},
+  "ritzcarlton_dubai": {h:"@ritzcarltondubaijbr", u:"https://www.instagram.com/ritzcarltondubaijbr/"},
+  "fiveluxejbr": {h:"@fiveluxejbr", u:"https://www.instagram.com/fiveluxejbr/"},
+  "andazdubaithepalm": {h:"@andazdubaithepalm", u:"https://www.instagram.com/andazdubaithepalm/"},
+  "jumeirahbeachhotel": {h:"@jumeirahbeachhotel", u:"https://www.instagram.com/jumeirahbeachhotel/"},
+  "jumeirahzabeelsaray": {h:"@jumeirahzabeelsaray", u:"https://www.instagram.com/jumeirahzabeelsaray/"},
+  "jumeirahmarsa_alarab": {h:"@jumeirahmarsa_alarab", u:"https://www.instagram.com/jumeirahmarsa_alarab/"},
+  "hhoteldubai": {h:"@hhoteldubai", u:"https://www.instagram.com/hhoteldubai/"},
+  "legolanddubai": {h:"@legolanddubai", u:"https://www.instagram.com/legolanddubai/"},
+  "jaresorts": {h:"@jaresorts", u:"https://www.instagram.com/jaresorts/"},
+  "radissonblumiradubai": {h:"@radissonbludubai", u:"https://www.instagram.com/radissonbludubai/"},
+  "radissonbludeiracreek": {h:"@radissonbludeiracrk", u:"https://www.instagram.com/radissonbludeiracrk/"},
+  "radissonblumediacitydubai": {h:"@radissonblumediacitydubai", u:"https://www.instagram.com/radissonblumediacitydubai/"},
+  "parkinndubaimotorcity": {h:"@parkinn_motordubai", u:"https://www.instagram.com/parkinn_motordubai/"},
+  "radissonreddubai": {h:"@radissonreddubai", u:"https://www.instagram.com/radissonreddubai/"},
+  "premierinnme": {h:"@premierinnme", u:"https://www.instagram.com/premierinnme/"},
+  "jumeirahsaadiyat": {h:"@jumeirahsaadiyat", u:"https://www.instagram.com/jumeirahsaadiyat/"},
+  "fairmont_babal_bahr": {h:"@fairmont_babal_bahr", u:"https://www.instagram.com/fairmont_babal_bahr/"},
+  "rosewoodabudhabi": {h:"@rosewoodabudhabi", u:"https://www.instagram.com/rosewoodabudhabi/"},
+  "parkhyattabudhabi": {h:"@parkhyattabudhabi", u:"https://www.instagram.com/parkhyattabudhabi/"},
+  "clubprivebyrxossaadiyat": {h:"@clubprivebyrxossaadiyat", u:"https://www.instagram.com/clubprivebyrxossaadiyat/"},
+  "radissonbluabudhabi": {h:"@radissonbluabudhabi", u:"https://www.instagram.com/radissonbluabudhabi/"},
+  "waldorfastoriaRAK": {h:"@waldorfastoriarak",
+  u:"https://www.instagram.com/waldorfastoriarak/"},
+  "sofitelalhamra": {h:"@sofitelalhamra", u:"https://www.instagram.com/sofitelalhamra/"},
+  "anantaraminaalarab": {h:"@anantaraminaalarab", u:"https://www.instagram.com/anantaraminaalarab/"},
+  "ritzcarlitonrak": {h:"@ritzcarltonalhamra",
+  u:"https://www.instagram.com/ritzcarltonalhamra/"},
+  "alhamrarakhotels": {h:"@alhamrarakhotels", u:"https://www.instagram.com/alhamrarakhotels/"},
+  "alhamravillagehotel": {h:"@alhamravillagehotel", u:"https://www.instagram.com/alhamravillagehotel/"},
+  "thechedi_albait": {h:"@thechedi_albait", u:"https://www.instagram.com/thechedi_albait/"},
+
+  "aquaventuredubai": {h:"@aquaventuredubai", u:"https://www.instagram.com/aquaventuredubai/"},
+  "globalvillage_uae": {h:"@globalvillage_uae", u:"https://www.instagram.com/globalvillage_uae/"},
+  "dubaimiraclegarden": {h:"@dubaimiraclegarden", u:"https://www.instagram.com/dubaimiraclegarden/"},
+  "dubaiframe": {h:"@thedubaiframe", u:"https://www.instagram.com/thedubaiframe/"},
+  "skidubai": {h:"@skidubai", u:"https://www.instagram.com/skidubai/"},
+  "imgworlds": {h:"@imgworlds", u:"https://www.instagram.com/imgworlds/"},
+  "aya.universe": {h:"@aya.universe", u:"https://www.instagram.com/aya.universe/"},
+  "thegreenplanetdubai": {h:"@thegreenplanetdubai", u:"https://www.instagram.com/thegreenplanetdubai/"},
+  "dubaiaquarium": {h:"@dubaiaquarium", u:"https://www.instagram.com/dubaiaquarium/"},
+  "burjkhalifa": {h:"@burjkhalifa", u:"https://www.instagram.com/burjkhalifa/"},
+  "theviewatthepalm": {h:"@theviewatthepalm", u:"https://www.instagram.com/theviewatthepalm/"},
+  "kidzaniadubai": {h:"@kidzaniadubai", u:"https://www.instagram.com/kidzaniadubai/"},
+  "dubaisafaripark": {h:"@dubaisafaripark", u:"https://www.instagram.com/dubaisafaripark/"},
+  "dubaiparks": {h:"@dubaiparks", u:"https://www.instagram.com/dubaiparks/"},
+  "laperledubai": {h:"@laperledubai", u:"https://www.instagram.com/laperledubai/"},
+  "madametussaudsdubai": {h:"@madametussaudsdubai", u:"https://www.instagram.com/madametussaudsdubai/"},
+  "aindubai": {h:"@aindubai", u:"https://www.instagram.com/aindubai/"},
+  "ferrariworldabudhabi": {h:"@ferrariworldabudhabi", u:"https://www.instagram.com/ferrariworldabudhabi/"},
+  "yaswaterworld": {h:"@yaswaterworld", u:"https://www.instagram.com/yaswaterworld/"},
+  "wbworldabudhabi": {h:"@wbworldabudhabi", u:"https://www.instagram.com/wbworldabudhabi/"},
+
+  "luigiadubai": {h:"@luigiadubai", u:"https://www.instagram.com/luigiadubai/"},
+    "robertosdubai": {h:"@robertosdubai", u:"https://www.instagram.com/robertosdubai/"},
+  "bussoladubai": {h:"@bussoladubai", u:"https://www.instagram.com/bussoladubai/"},
+  "ciprianiworld": {h:"@ciprianidxb", u:"https://www.instagram.com/ciprianidxb/"},
+  "scalinidubai": {h:"@scalinidubai", u:"https://www.instagram.com/scalinidubai/"},
+  "katsuyasls": {h:"@katsuyahydedubai",
+  u:"https://www.instagram.com/katsuyahydedubai/"},
+  "mandorientaldubai": {h:"@mandarinoriental_dubai", u:"https://www.instagram.com/mandarinoriental_dubai/"},
+  "kokoaddressdubai": {h:"@kokobayuae",
+  u:"https://www.instagram.com/kokobayuae/"},
+    "mimi_kakushi": {h:"@mimikakushi",
+  u:"https://www.instagram.com/mimikakushi/"},
+  "coyaabudhabi": {h:"@coyaabudhabi", u:"https://www.instagram.com/coyaabudhabi/"},
+  "fogodechaodubai": {h:"@fogodechaouae", u:"https://www.instagram.com/fogodechaouae/"},
+  "gauchorestaurants": {h:"@gauchorestaurants", u:"https://www.instagram.com/gauchorestaurants/"},
+    "seoulgardenae": {h:"@dubaiseoulgarden",
+  u:"https://www.instagram.com/dubaiseoulgarden/"},
+  "koreagardendubai": {h:"@koreagardendubai", u:"https://www.instagram.com/koreagardendubai/"},
+  "mrkimsdifc": {h:"@mrkim.ae",
+  u:"https://www.instagram.com/mrkim.ae/"},
+  "hanbok_abudhabi": {h:"@hanbokabudhabi",
+  u:"https://www.instagram.com/hanbokabudhabi/"},
+  "jonesthegrocer": {h:"@jonesthegrocer", u:"https://www.instagram.com/jonesthegrocer/"},
+  "tomandserg": {h:"@tomandserg", u:"https://www.instagram.com/tomandserg/"},
+  "bakerandspiceme": {h:"@bakerandspiceme", u:"https://www.instagram.com/bakerandspiceme/"},
+  "commongroundsdifc": {h:"@commongrounds.ae", u:"https://www.instagram.com/commongrounds.ae/"},
+  "wildandthemoon": {h:"@wildandthemoonuae", u:"https://www.instagram.com/wildandthemoonuae/"},
+  "_thesumofus_": {h:"@_thesumofus_", u:"https://www.instagram.com/_thesumofus_/"},
+
+  "auraskypool": {h:"@auraskypool", u:"https://www.instagram.com/auraskypool/"},
+  "azurebeachdubai": {h:"@azurebeachdubai", u:"https://www.instagram.com/azurebeachdubai/"},
+  "whitebeachdubai": {h:"@whitebeachdubai", u:"https://www.instagram.com/whitebeachdubai/"},
+  "driftbeachdubai": {h:"@driftbeachdubai", u:"https://www.instagram.com/driftbeachdubai/"},
+  "summersaltdubai": {h:"@summersaltdubai", u:"https://www.instagram.com/summersaltdubai/"},
+  "solunabeachdubai": {h:"@solunabeachdubai", u:"https://www.instagram.com/solunabeachdubai/"},
+  "barastibeach": {h:"@barastibeach", u:"https://www.instagram.com/barastibeach/"},
+  "ritzcarltondubai": {h:"@ritzcarltondubai", u:"https://www.instagram.com/ritzcarltondubai/"},
+  "soulbeachdxb": {h:"@soulbeachdxb", u:"https://www.instagram.com/soulbeachdxb/"},
+  "rixosbabalbahr": {h:"@rixosbabalbahr", u:"https://www.instagram.com/rixosbabalbahr/"},
+  "palmwestbeach": {h:"@palmwestbeach", u:"https://www.instagram.com/palmwestbeach/"},
+
+};
+
+const REF = {
+  1:  "https://shihospitality.ae",
+  2:  "https://alphamindgroup.com",
+  3:  "https://theentertainerme.com",
+  4:  "https://www.instagram.com/queriadxb",
+  5:  "https://www.instagram.com/petitegourmetdubai",
+  6:  "https://www.jumeirah.com",
+  7:  "https://www.addresshotels.com/en/hotels/address-beach-resort",
+  8:  "https://www.shangri-la.com/abudhabi/shangrila",
+  9:  "https://www.fairmont.com/palm-dubai",
+  10: "https://www.rodahotels.com/en/roda-beach-resort",
+  11: "https://www.fivehotelsandresorts.com/five-palm-jumeirah",
+  12: "https://www.hilton.com/en/hotels/dxbpjhi-hilton-dubai-palm-jumeirah",
+  13: "https://speakeasydubai.com",
+  14: "https://www.instagram.com/dubainight",
+  15: "https://www.fourseasons.com/dubai",
+  16: "https://ubkdubai.com",
+  17: "https://www.instagram.com/thenotoriouspig.dxb",
+  18: "https://www.instagram.com/iconbardubai",
+  19: "https://www.tajhotels.com/en-in/taj/taj-exotica-resort-and-spa-the-palm-dubai",
+  20: "https://www.rotana.com/rotana-hotels/uae/dubai/media-rotana",
+  21: "https://www.h-hotel.com/en/dining",
+  22: "https://www.marriott.com/hotels/travel/dxbwh-w-dubai-the-palm",
+  23: "https://www.instagram.com/baibar.ae",
+  24: "https://www.instagram.com/bliss6dubai",
+  25: "https://www.pizzaexpress.com/ae",
+  26: "https://thehoxton.com/en-gb/dubai/the-hoxton-dubai",
+  27: "https://www.instagram.com/aquadubai",
+  28: "https://www.instagram.com/hifivedubai",
+  29: "https://www.instagram.com/jbsgastropub",
+  30: "https://www.mcgettigans.com",
+  31: "https://www.gooseislanddubai.com/fiveluxe",
+  32: "https://www.fairmont.com/palm-dubai/dining",
+  33: "https://www.fairmont.com/palm-dubai/dining",
+  34: "https://www.instagram.com/exitdubai",
+  35: "https://www.instagram.com/theblacksmithdubai",
+  36: "https://www.instagram.com/distillerydubai",
+  37: "https://lockstockbarrel.ae",
+  38: "https://www.marriott.com/hotels/travel/dxbjw-w-dubai-al-habtoor-city",
+  39: "https://www.instagram.com/bridgewatertavern",
+  40: "https://www.grandhyatt.com/en/hotel/home.html?property=DXBGH",
+  41: "https://www.olearys.ae",
+  42: "https://www.instagram.com/ikigaidubai",
+  43: "https://www.addresshotels.com/en/hotels/address-beach-resort",
+  44: "https://dubai.grand.hyatt.com/en/hotel/dining/Andiamo.html",
+  45: "https://www.damichele.net",
+  46: "https://www.instagram.com/nomadiadubai",
+  47: "https://www.jwmarriottmarquishoteldubai.com/dining",
+  48: "https://www.instagram.com/armadadubai",
+  49: "https://lockstockbarrel.ae",
+  50: "https://asia-asia.com",
+  51: "https://www.instagram.com/elchapo_dubai",
+  52: "https://sucredubai.com",
+  53: "https://www.instagram.com/medusadubai",
+  54: "https://www.instagram.com/labaia.dubai",
+  55: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-beach-hotel",
+  56: "https://www.gallerybeachdubai.com",
+  57: "https://www.marriott.com/hotels/travel/dxbhh-dubai-marriott-harbour-hotel-and-suites",
+  58: "https://thefirstgroup.com",
+  59: "https://www.instagram.com/azucardubai",
+  60: "https://www.radissonhotels.com/en-us/destination/united-arab-emirates/dubai",
+  61: "https://www.instagram.com/lavasdubai",
+  62: "https://cargorestaurant.ae",
+  63: "https://www.instagram.com/bigglesdubai",
+  64: "https://baskbeach.com",
+  65: "https://baskbeach.com",
+  66: "https://alaya.ae",
+  67: "https://amazonicorestaurant.com/dubai",
+  68: "https://avlibytashas.com",
+  69: "https://bardespres.com/dubai",
+  70: "https://www.rokarestaurant.com/en/roka-business-bay-dubai",
+  71: "https://estiatoromilos.com/dubai",
+  72: "https://www.instagram.com/eugeneeugenedubai",
+  73: "https://www.dusit.com/dusitthani/dubai/dining/benjarong",
+  74: "https://www.instagram.com/frenchbrasseriejlt",
+  75: "https://soondxb.com",
+  76: "https://blabladubai.com",
+  77: "https://www.jaresorts.com/hotels/ja-ocean-view-hotel",
+  78: "https://thefirstgroup.com",
+  79: "https://thefirstgroup.com",
+  80: "https://thefirstgroup.com",
+  81: "https://www.hsbc.ae/en/promotions/dining",
+  82: "https://emiratesmypass.com",
+  83: "https://meraas.com/en/meraas-rewards",
+  84: "https://www.zomato.com/dubai",
+  85: "https://speakeasydubai.com",
+  86: "https://www.jumeirah.com",
+  87: "https://www.fairmont.com/palm-dubai",
+  88: "https://all.accor.com/hotel/8167/index.en.shtml",
+  89: "https://all.accor.com/hotel/7257/index.en.shtml",
+  90: "https://www.oneandonlyresorts.com/one-zaabeel",
+  91: "https://www.mileohotels.com",
+  92: "https://www.marriott.com/hotels/travel/dxbmj-marriott-resort-palm-jumeirah-dubai",
+  93: "https://www.tajhotels.com/en-in/taj/taj-dubai",
+  94: "https://www.levahotels.com",
+  95: "https://theentertainerme.com/one-heart",
+  96: "https://www.mcgettigans.com",
+  97: "https://www.paramounthotelsdubai.com",
+  98: "https://www.paramounthotelsdubai.com",
+  99: "https://www.paramounthotelsdubai.com",
+  100:"https://baskbeach.com",
+  101:"https://www.hyatt.com/andaz/dxbaz-andaz-dubai-the-palm/dining",
+  102:"https://irisdubai.com",
+  103:"https://www.instagram.com/kickersportsbar",
+  104:"https://www.reformsocialgrill.ae",
+  105:"https://www.hilton.com/en/hotels/dxbpjhi-hilton-dubai-palm-jumeirah/dining",
+  106:"https://www.fogodechao.com/location/dubai",
+  107:"https://stksteakhouse.com/venues/dubai-jbr",
+  108:"https://www.instagram.com/amordubai",
+  109:"https://www.themainedxb.com",
+  110:"https://soondxb.com",
+  111:"https://www.tajhotels.com/en-in/vivanta/vivanta-dubai-jlt",
+  112:"https://www.fogodechao.com/location/dubai",
+  113:"https://www.hilton.com/en/hotels/dxbpjhi-hilton-dubai-palm-jumeirah/dining",
+  114:"https://www.instagram.com/editdubai",
+  115:"https://maidenshanghai.com",
+  116:"https://www.jumeirah.com/en/hotels-resorts/dubai/madinat-jumeirah",
+  117:"https://www.atlantis.com/dubai/restaurants/en-fuego",
+  118:"https://www.atlantis.com/dubai/restaurants/saffron",
+  119:"https://buddhabardubai.com",
+  120:"https://romeolane.ae",
+  121:"https://coyadubai.com",
+  122:"https://www.sofiteldubai.com/restaurants-bars/brasserie-boulud",
+  123:"https://www.pizzaexpress.com/ae",
+  124:"https://www.marriott.com/hotels/travel/dxbsi-sheraton-mall-of-the-emirates",
+  125:"https://www.mcgettigans.com",
+  126:"https://ruyadubai.com",
+  127:"https://www.zumarestaurant.com/en/dubai",
+  128:"https://www.nobudubai.com",
+  129:"https://chezwam.ae",
+  130:"https://theguilddubai.com",
+  131:"https://www.gauchodubai.com",
+  132:"https://www.nikkibeach.com/dubai",
+  133:"https://www.delanodubai.com",
+  134:"https://covebeach.com",
+  135:"https://0-gravity.ae",
+  136:"https://j1beach.com",
+  137:"https://blabladubai.com",
+  138:"https://www.lpmrestaurants.com/dubai",
+  139:"https://www.zumarestaurant.com/en/dubai",
+  140:"https://www.nobudubai.com",
+  141:"https://mythosdubai.com",
+  142:"https://ninive.ae",
+  143:"https://chezwam.ae",
+  144:"https://ruyadubai.com",
+  145:"https://www.sofiteldubai.com/restaurants-bars/brasserie-boulud",
+  146:"https://soondxb.com",
+  147:"https://irisdubai.com",
+  148:"https://stksteakhouse.com/venues/dubai-jbr",
+  149:"https://www.atlantis.com/dubai/restaurants/saffron",
+  150:"https://www.gauchodubai.com",
+  151:"https://sexyfishdubai.me",
+  152:"https://www.instagram.com/gabadubai",
+  153:"https://www.fibbermageesdubai.com",
+  154:"https://www.instagram.com/indi16dubai",
+  155:"https://www.virginizakaya-dxb.com/ladiesnight",
+  156:"https://lockstockbarrel.ae",
+  157:"https://swingerscrazygolf.ae",
+  158:"https://www.brewdog.com/bars/bar/brewdog-dubai",
+  159:"https://alphamind-group.com/our-brands/ruby-ru-by-iris/",
+  160:"https://www.rixos.com/en/hotel-resort/rixos-premium-dubai-jbr/restaurants-bars",
+  161:"https://stksteakhouse.com/venues/dubai-jbr",
+  162:"https://boca.ae",
+  163:"https://www.bullandbeardifc.com",
+  164:"https://rowleysrestaurants.com",
+  165:"https://www.tajhotels.com/en-in/vivanta/vivanta-dubai-jlt/dining",
+  166:"https://www.wetdeckdubai.com",
+  167:"https://bchclb.com",
+  168:"https://www.hilton.com/en/hotels/dxbpjhi-hilton-dubai-palm-jumeirah/dining",
+  169:"https://www.hotelindigodubai.com/offers",
+  170:"https://www.ritzcarlton.com/en/hotels/dubai/dubai-beach/offers",
+  171:"https://www.grandhyatt.com/en/hotel/home.html?property=DXBGH",
+  172:"https://www.atlantis.com/dubai/uae-resident",
+  173:"https://www.anantara.com/en/palm-dubai/offers/exclusive-gcc-and-uae-residents-special",
+  174:"https://www.smiles.ae",
+  175:"https://www.cobone.com/en/deals/food-dining-dubai",
+  176:"https://www.theworlds50best.com/discovery/Establishments/United-Arab-Emirates/Dubai/Hawkerboi.html",
+  177:"https://kaimanabeach.ae",
+  178:"https://amazonicorestaurant.com/dubai",
+  179:"https://www.carbonedubai.com",
+  180:"https://gymkhanarestaurants.com",
+  181: "https://www.rokadubai.com/",
+  182: "https://www.kaimanabeachdubai.com/",
+  183: "https://narniadowntown.com/",
+  184: "https://www.blacksheepdubai.com/",
+  185: "https://rodeodrivedubai.com/",
+  186: "https://www.barrafina.co.uk/restaurant/barrafina-difc/",
+  187: "https://www.marriott.com/en-us/hotels/dxbwi-w-dubai-the-palm/dining/",
+  188: "https://www.thelioninthesundubai.com/",
+  189: "https://www.marriott.com/en-us/hotels/dxbjw-jw-marriott-hotel-dubai/dining/",
+  190: "https://www.amgkaffehaus.com/",
+  191: "https://www.reformsocialgrill.ae",
+  192: "https://mayabaydubai.com/",
+  193: "https://www.bebeach.ae/",
+  194: "https://thekegroom.ae/",
+  195: "https://www.barninjasint.com/",
+
+  196: "https://www.atlantis.com/the-royal",
+  197: "https://www.bulgarihotels.com/en_US/dubai",
+  198: "https://www.jumeirah.com/en/hotels-resorts/dubai/burj-al-arab",
+  199: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-al-qasr",
+  200: "https://www.oneandonlyresorts.com/the-palm",
+  201: "https://www.banyantree.com/dubai/dubai",
+  202: "https://www.anantara.com/en/the-palm-dubai",
+  203: "https://www.ritzcarlton.com/en/hotels/dubai/jbr",
+  204: "https://www.fivehotelsandresorts.com/five-luxe-jbr",
+  205: "https://www.hyatt.com/andaz/dxbad-andaz-dubai-the-palm",
+  206: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-beach-hotel",
+  207: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-zabeel-saray",
+  208: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-marsa-al-arab",
+  209: "https://www.hhoteldubai.com",
+  210: "https://www.legoland.com/dubai/hotel/",
+  211: "https://www.jaresorts.com/hotels/ja-hatta-fort-hotel",
+  212: "https://www.radissonhotels.com/en-us/hotels/radisson-blu-dubai-waterfront",
+  213: "https://www.radissonhotels.com/en-us/hotels/radisson-blu-dubai-deira-creek",
+  214: "https://www.radissonhotels.com/en-us/hotels/radisson-blu-dubai-media-city",
+  215: "https://www.radissonhotels.com/en-us/hotels/park-inn-dubai-motor-city",
+  216: "https://www.radissonhotels.com/en-us/hotels/radisson-red-dubai-silicon-oasis",
+  217: "https://www.premierinn.com/gb/en/hotels/uae.html",
+  218: "https://www.jumeirah.com/en/hotels-resorts/abu-dhabi/jumeirah-at-saadiyat-island-resort",
+  219: "https://www.fairmont.com/bab-al-bahr-abu-dhabi",
+  220: "https://www.rosewoodhotels.com/en/abu-dhabi",
+  221: "https://www.hyatt.com/en-US/hotel/abu-dhabi/park-hyatt-abu-dhabi-hotel-and-villas/auhph",
+  222: "https://www.rixos.com/en/hotel-resort/rixos-premium-saadiyat-island",
+  223: "https://www.radissonhotels.com/en-us/hotels/radisson-blu-abu-dhabi-corniche",
+  224: "https://waldorfastoria3.hilton.com/en/hotels/ras-al-khaimah/waldorf-astoria-ras-al-khaimah",
+  225: "https://sofitel.accor.com/hotel/4609",
+  226: "https://www.anantara.com/en/mina-al-arab-ras-al-khaimah",
+  227: "https://www.ritzcarlton.com/en/hotels/ras-al-khaimah",
+  228: "https://www.alhamra.ae/en/accommodation/al-hamra-residence",
+  229: "https://www.alhamra.ae/en/accommodation/al-hamra-village-hotel",
+  230: "https://www.ghmhotels.com/en/the-chedi-al-bait-sharjah",
+
+  231: "https://www.atlantis.com/dubai/aquaventure-waterpark",
+  232: "https://www.globalvillage.ae/en",
+  233: "https://www.dubaimiraclegarden.com/",
+  234: "https://www.thedubaiframe.com/",
+  235: "https://www.skidxb.com/",
+  236: "https://www.imgworlds.com/",
+  237: "https://www.ayauniverse.com/",
+  238: "https://www.thegreenplanet.ae/",
+  239: "https://www.thedubaiaquarium.com/",
+  240: "https://www.burjkhalifa.ae/en/at-the-top/",
+  241: "https://www.theviewatthepalm.com/",
+  242: "https://www.kidzania.com/dubai/",
+  243: "https://www.dubaisafaripark.ae/",
+  244: "https://www.dubaiparksandresorts.com/",
+  245: "https://www.laperle.com/",
+  246: "https://www.madametussauds.com/dubai/",
+  247: "https://www.aindubai.com/",
+  248: "https://www.ferrariworldabudhabi.com/",
+  249: "https://www.yaswaterworld.com/",
+  250: "https://www.wbworldabudhabi.com/",
+
+  251: "https://www.luigia.ae/",
+  253: "https://robertosrestaurants.com/dubai/",
+  254: "https://www.bussoladubai.com/",
+  255: "https://www.ciprianidubai.com/",
+  256: "https://www.scalinirestaurant.com/",
+  257: "https://www.sbe.com/hotels/sls/dubai/restaurants/katsuya/",
+  258: "https://www.mandarinoriental.com/en/dubai/jumeira-beach/dine/netsu",
+  259: "https://www.addresshotels.com/en/hotels/address-beach-resort/dine/koko",
+  261: "https://www.mimikakushi.com/",
+  262: "https://www.coyarestaurant.com/abu-dhabi/",
+  263: "https://fogodechao.com/location/dubai/",
+  264: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-beach-hotel/restaurants-and-bars/la-parrilla",
+  265: "https://gauchorestaurants.com/restaurants/dubai/",
+  267: "https://www.seoulgardenrestaurant.ae/",
+  268: "https://koreagardendubai.com/",
+  269: "https://www.mrkim.ae/",
+  270: "https://www.hanbokban.com/",
+  271: "https://www.jonesthegrocer.com/",
+  272: "https://tomandserg.com/",
+  273: "https://bakerandspice.me/",
+  274: "https://www.commongrounds.com/",
+  275: "https://www.wildandthemoon.ae/",
+  276: "https://www.thesumofus.com/",
+
+  277: "https://auraskypool.com/",
+  278: "https://azure-beach.com/dubai/",
+  279: "https://www.atlantis.com/dubai/entertainment/white-beach-club",
+  280: "https://www.driftbeachdubai.com/",
+  281: "https://www.jumeirah.com/en/hotels-resorts/dubai/jumeirah-al-naseem/restaurants-and-bars/summersalt",
+  282: "https://www.solunabeachclub.com/",
+  283: "https://www.barastibeach.com/",
+  284: "https://www.ritzcarlton.com/en/hotels/dxbrz-the-ritz-carlton-dubai",
+  285: "https://www.instagram.com/soulbeachdxb/",
+  286: "https://www.rixos.com/hotel-resort/rixos-bab-al-bahr",
+  287: "https://www.westbeach.ae/en",
+
+};
+
+const CAT_CLASS = {
+    "Trade Rates":       "b-solidarity",
+    "Drinks & Nightlife":"b-happy",
+    "Dining Events":     "b-brunch",
+    "Hotel Deals":       "b-hotel",
+    "Leisure":           "b-entertainment",
+    "Promotions":        "b-special",
+    "Platforms & Apps":  "b-platform",
+    "Italian":           "b-italian",
+    "Japanese":          "b-japanese",
+    "Latin":             "b-perulatin",
+    "Korean":            "b-korean",
+    "All Day Dining":    "b-allday",
+  };
+
+const DATA = [
+  // ── ORIGINAL 100 ──────────────────────────────────────────────────────────
+  {n:1,  cat:"Trade Rates",       venue:"SHI Hospitality (SHI Restaurant, MEI, MOLI by SHI)",  loc:"Bluewaters / Jumeirah / Dubai Hills", deal:"15% off dining for UAE Nationals, Residents, FAZAA & ESAAD cardholders", saving:"15% off",               period:"From 9 Mar 2026",     ig:["SHI Hospitality","MOLI by SHI"]},
+  {n:2,  cat:"Trade Rates",       venue:"AlphaMind Group (Kira, LITT, Bar Du Port, CLAP, Ruby Ru, BDP Beach, Son of a Fish, La Mezcaleria JBR, The Sports Bar)",loc:"Dubai / RAK / Abu Dhabi",deal:"30% off across all venues throughout Ramadan — solidarity initiative amid regional conflict",saving:"30% off",period:"Ramadan 2026",ig:["CLAP","LITT","Bar Du Port"]},
+  {n:3,  cat:"Trade Rates",       venue:"Entertainer App (1,000s of F&B venues)",               loc:"Dubai & Abu Dhabi",   deal:"100,000 free 6-month One Heart memberships — BOGO deals at all partner restaurants, bars & attractions",saving:"Free (AED 650 value)",period:"Until 15 Sep 2026",ig:["Entertainer App"]},
+  {n:4,  cat:"Trade Rates",       venue:"Querida DXB (Mexican Restaurant)",                     loc:"Al Barsha",           deal:"Free burrito, beverage & dates for anyone breaking fast (6–7:30pm); free Wi-Fi & rest space 9am–midnight",saving:"FREE",period:"Conflict period",ig:["Querida DXB"]},
+  {n:5,  cat:"Trade Rates",       venue:"Petite Gourmet Dubai",                                 loc:"Dubai",               deal:"Freshly prepared meals for stranded individuals, vulnerable residents & delivery riders",saving:"FREE",period:"Conflict period",ig:[]},
+  {n:6,  cat:"Trade Rates",       venue:"Jumeirah Group Hotels (Burj Al Arab, Al Naseem, Al Qasr, Mina Al Salam & more)", loc:"Dubai & Abu Dhabi",deal:"Up to 30% off stays + 2-for-1 spa treatments + dining perks for residents",saving:"Up to 30% off",period:"Year-round",ig:["Jumeirah Group"]},
+  {n:7,  cat:"Trade Rates",       venue:"Address Beach Resort",                                 loc:"JBR",                 deal:"Up to 30% off for UAE residents + room rate fully redeemable on F&B spend",saving:"Up to 30% off",period:"Year-round",ig:["Address Beach Resort"]},
+  {n:8,  cat:"Trade Rates",       venue:"Shangri-La Abu Dhabi",                                 loc:"Abu Dhabi",           deal:"Staycation deal including 15% off dining for UAE residents",saving:"15% off dining",period:"Year-round",ig:["Shangri-La"]},
+  {n:9,  cat:"Trade Rates",       venue:"Fairmont The Palm",                                    loc:"Palm Jumeirah",       deal:"Reduced room rates (AED 900/night with breakfast) following conflict period surge",saving:"AED 900/night",period:"Year-round",ig:["Fairmont The Palm"]},
+  {n:10, cat:"Trade Rates",       venue:"Roda Beach Resort",                                    loc:"Dubai",               deal:"Rooms from $108/night with F&B perks for residents",saving:"From $108/night",period:"Year-round",ig:[]},
+  {n:11, cat:"Trade Rates",       venue:"FIVE Palm Jumeirah",                                   loc:"Palm Jumeirah",       deal:"Steep room discounts with full room rate redeemable on F&B spend",saving:"Full F&B credit",period:"Year-round",ig:["FIVE Palm Jumeirah"]},
+  {n:12, cat:"Trade Rates",       venue:"Hilton Palm Jumeirah",                                 loc:"Palm Jumeirah",       deal:"Room rate fully redeemable on F&B — similar model to FIVE Palm",saving:"Full F&B credit",period:"Year-round",ig:["Hilton Palm Jumeirah"]},
+  {n:13, cat:"Trade Rates",       venue:"Speakeasy Bar & Restaurant",                           loc:"JBR / The Marina",    deal:"40% off à la carte menu exclusively for Dubai residents",saving:"40% off",period:"Year-round",ig:["Speakeasy"]},
+  {n:14, cat:"Trade Rates",       venue:"Multiple restaurants via @dubainight",                 loc:"Dubai (various)",     deal:"Multiple venues offering up to 30% off bill for Dubai residents — curated via @dubainight",saving:"Up to 30% off",period:"Year-round",ig:[]},
+  {n:15, cat:"Trade Rates",       venue:"Four Seasons Dubai (Jumeirah Beach & DIFC)",           loc:"Jumeirah Beach / DIFC",deal:"Exclusive resident rate, breakfast, beach access, spa discounts",saving:"Exclusive rate",period:"Year-round",ig:["Four Seasons Dubai"]},
+  {n:16, cat:"Drinks & Nightlife",     venue:"Urban Bar & Kitchen (UBK)",                            loc:"JLT",                 deal:"Selected beers, wine, spirits from AED 33 all day",saving:"From AED 33",period:"Daily 3–8pm",ig:["Urban Bar & Kitchen"]},
+  {n:17, cat:"Drinks & Nightlife",     venue:"The Notorious",                                        loc:"JBR",                 deal:"Selected drinks from AED 35 all day every day",saving:"From AED 35",period:"Daily",ig:["The Notorious"]},
+  {n:18, cat:"Drinks & Nightlife",     venue:"Icon Bar & Lounge",                                    loc:"Dubai",               deal:"Selected drinks from AED 20 all day",saving:"From AED 20",period:"Daily",ig:["Icon Bar"]},
+  {n:19, cat:"Drinks & Nightlife",     venue:"Roaring Rabbit",                                       loc:"Palm Jumeirah (Taj Exotica)",deal:"30% off all F&B on Fridays (10-hour happy hour)",saving:"30% off",period:"Fridays",ig:["Roaring Rabbit"]},
+  {n:20, cat:"Drinks & Nightlife",     venue:"Nelson's",                                             loc:"Barsha Heights (Media Rotana)",deal:"Bottled & draught beer, house wine discounted; 8-hour daily happy hour 12–8pm",saving:"Discounted",period:"Daily 12–8pm",ig:[]},
+  {n:21, cat:"Drinks & Nightlife",     venue:"71 Sports Bar",                                        loc:"Dubai",               deal:"Selected drinks from AED 29",saving:"From AED 29",period:"Daily",ig:[]},
+  {n:22, cat:"Drinks & Nightlife",     venue:"Attiko",                                               loc:"W Dubai",             deal:"Discounts on select fruity beverages",saving:"Discounted",period:"Daily",ig:[]},
+  {n:23, cat:"Drinks & Nightlife",     venue:"Bai Bar & Terrace",                                    loc:"Dubai",               deal:"Selected drinks from AED 25 + 50% off total bill",saving:"50% off + AED 25",period:"Daily 3–7pm",ig:[]},
+  {n:24, cat:"Drinks & Nightlife",     venue:"Bliss 6",                                              loc:"Dubai",               deal:"Buy one get one free on every drink at AED 48",saving:"BOGO at AED 48",period:"Daily 4–6pm",ig:["Bliss 6"]},
+  {n:25, cat:"Drinks & Nightlife",     venue:"Jazz @ Pizza Express",                                 loc:"Dubai",               deal:"Drinks from AED 17; classic pizza + 5 beers AED 150; Monday bonus deals",saving:"From AED 17",period:"Tue–Sun 12–8pm",ig:["Jazz @ Pizza Express"]},
+  {n:26, cat:"Drinks & Nightlife",     venue:"Hoxton Bar & Urban Eatery",                            loc:"Dubai",               deal:"Selected drinks at half price",saving:"50% off",period:"Daily 12–8pm",ig:["Hoxton"]},
+  {n:27, cat:"Drinks & Nightlife",     venue:"Aqua Poolside Bar & Grill",                            loc:"Dubai",               deal:"Finest beverages from AED 32 with poolside view",saving:"From AED 32",period:"Daily",ig:[]},
+  {n:28, cat:"Drinks & Nightlife",     venue:"Hi Five",                                              loc:"Dubai",               deal:"Selected drinks from AED 25",saving:"From AED 25",period:"Daily 12–8pm",ig:[]},
+  {n:29, cat:"Drinks & Nightlife",     venue:"JB's Gastropub",                                       loc:"Dubai",               deal:"Extended happy hour + late night house drink specials",saving:"Discounted",period:"Daily 12–8pm",ig:[]},
+  {n:30, cat:"Drinks & Nightlife",     venue:"McGettigan's JLT",                                     loc:"JLT",                 deal:"Beers, spirits, wines, ciders from AED 30–33",saving:"From AED 30",period:"Sun–Fri 12–8pm",ig:["McGettigan's"]},
+  {n:31, cat:"Drinks & Nightlife",     venue:"Goose Island Tap House",                               loc:"FIVE LUXE JBR",       deal:"30% off selected drinks; craft beers from AED 32; Mon–Fri noon–9pm, Sat–Sun noon–8pm",saving:"30% off / AED 32",period:"Mon–Fri noon–9pm",ig:["Goose Island Tap House"]},
+  {n:32, cat:"Drinks & Nightlife",     venue:"Blowfish — Fairmont The Palm",                         loc:"Palm Jumeirah",       deal:"Selected drinks at AED 45",saving:"AED 45 drinks",period:"Daily 4–8pm",ig:["Fairmont The Palm"]},
+  {n:33, cat:"Drinks & Nightlife",     venue:"Vuvuzela — Fairmont The Palm",                         loc:"Palm Jumeirah",       deal:"Drinks from AED 41",saving:"From AED 41",period:"Daily 5pm–1am",ig:["Fairmont The Palm"]},
+  {n:34, cat:"Drinks & Nightlife",     venue:"The Exit Sports Bar",                                  loc:"Dubai",               deal:"Curated beverage menu at special prices",saving:"Discounted",period:"Mon–Fri 4–8pm",ig:[]},
+  {n:35, cat:"Drinks & Nightlife",     venue:"Blacksmith Bar & Eatery",                              loc:"Dubai Marina / Business Bay",deal:"BOGO daily + late night deal 10pm–1am",saving:"BOGO",period:"Daily 2–8pm",ig:["Blacksmith"]},
+  {n:36, cat:"Drinks & Nightlife",     venue:"Distillery Gastropub",                                 loc:"Dubai",               deal:"BOGO on selected drinks daily",saving:"BOGO",period:"Daily 4–8pm",ig:["Distillery"]},
+  {n:37, cat:"Drinks & Nightlife",     venue:"Lock, Stock & Barrel (JBR/Marina)",                   loc:"JBR / Marina",        deal:"30% off selected beverages",saving:"30% off",period:"Mon–Thu 4–8pm",ig:["Lock, Stock & Barrel"]},
+  {n:38, cat:"Drinks & Nightlife",     venue:"SoBe Rooftop Lounge",                                  loc:"Dubai",               deal:"BOGO on selected cocktails",saving:"BOGO",period:"Daily",ig:[]},
+  {n:39, cat:"Drinks & Nightlife",     venue:"Bridgewater Tavern",                                   loc:"Dubai",               deal:"BOGO on selected drinks daily",saving:"BOGO",period:"Daily 4–7pm",ig:[]},
+  {n:40, cat:"Drinks & Nightlife",     venue:"H Bar",                                                loc:"Dubai",               deal:"BOGO on selected beverages daily",saving:"BOGO",period:"Daily",ig:[]},
+  {n:41, cat:"Drinks & Nightlife",     venue:"O'Learys",                                             loc:"Dubai",               deal:"BOGO on drinks all day — one of longest deals in Dubai",saving:"BOGO",period:"All day",ig:["O'Learys"]},
+  {n:42, cat:"Japanese",     venue:"Ikigai",                                               loc:"Dubai Marina",        deal:"25% off all beverages daily — rare for premium spots",saving:"25% off",period:"Daily",ig:["Ikigai"]},
+  {n:43, cat:"Drinks & Nightlife",     venue:"Address Beach Resort",                                 loc:"JBR",                 deal:"AED 20 cocktails on the beach (Forbes 5-Star resort)",saving:"AED 20 cocktails",period:"Daily",ig:["Address Beach Resort"]},
+  {n:44, cat:"Italian",     venue:"Andiamo — Grand Hyatt Dubai",                          loc:"Grand Hyatt Dubai",   deal:"2 drinks + 1 antipasto — Italian aperitivo experience, AED 150",saving:"AED 150",period:"Daily",ig:["Andiamo"]},
+  {n:45, cat:"Italian",     venue:"Da Michele",                                           loc:"Dubai",               deal:"2 drinks + free canapés for AED 94",saving:"AED 94",period:"Daily",ig:["Da Michele"]},
+  {n:46, cat:"Drinks & Nightlife",     venue:"Nomadia Lounge & Terrace",                             loc:"Dubai",               deal:"Perrier-Jouët Grand Brut AED 90/glass or AED 430/bottle with food",saving:"AED 90/glass",period:"Daily 5–8pm",ig:["Nomadia"]},
+  {n:47, cat:"Italian",     venue:"Positano",                                             loc:"Business Bay (JW Marriott Marquis)",deal:"Authentic antipasti + 2 drinks, AED 93 per person",saving:"AED 93/person",period:"Daily",ig:["Positano"]},
+  {n:48, cat:"Drinks & Nightlife",     venue:"Armada Bar & Urban Eatery",                            loc:"JLT",                 deal:"Hops, spirits and wines from AED 23",saving:"From AED 23",period:"Daily 12–8pm",ig:[]},
+  {n:49, cat:"Drinks & Nightlife",         venue:"Lock Stock & Barrel (Business Bay)",                   loc:"Business Bay",        deal:"4 hours unlimited free drinks for ladies",saving:"FREE drinks (4 hrs)",period:"Thursdays 8–11pm",ig:["Lock Stock & Barrel"]},
+  {n:50, cat:"Drinks & Nightlife",         venue:"Asia Asia",                                            loc:"Dubai Marina / Various",deal:"2-course set menu + 2 hours free-flow wine, AED 225 per person",saving:"AED 225",period:"Tuesdays",ig:["Asia Asia"]},
+  {n:51, cat:"Drinks & Nightlife",         venue:"El Chapo (Mexican)",                                   loc:"Dubai",               deal:"2 hours unlimited tapas & drinks, AED 179",saving:"AED 179",period:"Wednesdays 6pm",ig:[]},
+  {n:52, cat:"Drinks & Nightlife",         venue:"Sucre",                                                loc:"DIFC",                deal:"Unlimited fries + free-flowing drinks + starter + main, AED 180",saving:"AED 180",period:"Wednesdays",ig:["Sucre"]},
+  {n:53, cat:"Drinks & Nightlife",         venue:"MEDUSA at Gallery 7/40 Dubai",                         loc:"Dubai",               deal:"3 hours free-flow house wine + sharing Greek platter AED 345",saving:"AED 345",period:"Sundays",ig:["MEDUSA"]},
+  {n:54, cat:"Italian",         venue:"La Baia",                                              loc:"Dubai",               deal:"Pool & beach access + free-flow drinks + live DJ & saxophone",saving:"Free-flow drinks",period:"Weekly",ig:[]},
+  {n:55, cat:"Drinks & Nightlife",         venue:"Beach House (Palm Jumeirah)",                          loc:"Palm Jumeirah",       deal:"Tide & Taste platter + unlimited house wine & spritzers + pool access",saving:"Unlimited drinks",period:"Weekly",ig:[]},
+  {n:56, cat:"Drinks & Nightlife",         venue:"Gallery Beach Dubai (Mamma Mia Ladies Day)",           loc:"Dubai",               deal:"3-hour unlimited package from AED 200 with Greek food + entertainment",saving:"From AED 200",period:"Sundays",ig:[]},
+  {n:57, cat:"Drinks & Nightlife",         venue:"Observatory Lounge",                                   loc:"Dubai",               deal:"Red, white, rosé wine included — tallest ladies night in Dubai",saving:"Free wine",period:"Tuesdays 7pm–1am",ig:["Observatory"]},
+  {n:58, cat:"Drinks & Nightlife",         venue:"El Toro (The First Group)",                            loc:"Dubai",               deal:"3 hours unlimited drinks for AED 99 + live flamenco show",saving:"AED 99 (3 hrs)",period:"Weekly",ig:["El Toro"]},
+  {n:59, cat:"Dining Events",               venue:"Azucar",                                               loc:"Dubai",               deal:"Unlimited sharing menu + unlimited beverages with Latin DJ",saving:"All-inclusive",period:"Fridays 8pm+",ig:["Azucar"]},
+  {n:60, cat:"Dining Events",               venue:"Radisson Hotels Dubai",                                loc:"Dubai",               deal:"Unlimited house beverages 2 hrs AED 110 / 3 hrs AED 159",saving:"From AED 110",period:"Weekly",ig:["Radisson Hotels Dubai"]},
+  {n:61, cat:"Dining Events",               venue:"Lavash Dubai",                                         loc:"Dubai",               deal:"36 brunch items from AED 49; 47 dinner items from AED 69. Unlimited drinks add-on available",saving:"From AED 49",period:"Daily",ig:["Lavash"]},
+  {n:62, cat:"Dining Events",               venue:"Cargo at Pier 7",                                      loc:"Dubai Marina (Pier 7)",deal:"Asian brunch + unlimited house beverages + live music",saving:"Unlimited drinks",period:"Saturdays 2–5pm",ig:["Cargo"]},
+  {n:63, cat:"Dining Events",               venue:"Biggles Pub",                                          loc:"Dubai",               deal:"Full spread (steak, sausages, fries) + 2 soft or alcoholic drinks",saving:"Inclusive",period:"Sundays",ig:["Biggles"]},
+  {n:64, cat:"Dining Events",               venue:"Bask Social",                                          loc:"Palm Jumeirah (Fairmont)",deal:"Unlimited select cocktails and wines poolside",saving:"Unlimited drinks",period:"Saturdays 4–7pm",ig:["Bask"]},
+  {n:65, cat:"Dining Events",               venue:"Sundaze at Bask Beach Club",                           loc:"Palm Jumeirah (Fairmont)",deal:"Mediterranean aperitivo-style brunch by the coast",saving:"All-inclusive",period:"Sundays",ig:["Bask Beach Club"]},
+  {n:66, cat:"Dining Events",       venue:"Alaya",                                                loc:"DIFC",                deal:"3-course AED 148 / 4-course AED 168 — Mediterranean cuisine",saving:"From AED 148",period:"Mon–Fri 12–3pm",ig:["Alaya"]},
+  {n:67, cat:"Latin",       venue:"Amazónico",                                            loc:"DIFC",                deal:"2 starters + 1 main AED 145 (Latin American tropical cuisine)",saving:"AED 145",period:"Mon–Fri 12–3pm",ig:["Amazónico"]},
+  {n:68, cat:"Dining Events",       venue:"Avli by tashas",                                       loc:"DIFC",                deal:"Greek cuisine set menu AED 139 per person",saving:"AED 139",period:"Mon–Fri 12–3pm",ig:["Avli"]},
+  {n:69, cat:"Dining Events",       venue:"Bar Des Prés",                                         loc:"DIFC",                deal:"French brasserie set lunch menu",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Bar Des Prés"]},
+  {n:70, cat:"Japanese",       venue:"ROKA",                                                 loc:"Dubai",               deal:"Sharing menu (sashimi, dumplings, baby chicken) AED 195",saving:"AED 195",period:"Mon–Fri 12–3pm",ig:["ROKA"]},
+  {n:71, cat:"Dining Events",       venue:"Milos",                                                loc:"DIFC",                deal:"Fine dining Greek lunch (grilled octopus, lobster pasta) AED 260",saving:"AED 260",period:"Mon–Fri 12–3pm",ig:["Milos"]},
+  {n:72, cat:"Dining Events",       venue:"Eugène Eugène",                                        loc:"Mall of the Emirates",deal:"French brasserie 2-course lunch AED 100",saving:"AED 100",period:"Mon–Fri 12–3pm",ig:["Eugène Eugène"]},
+  {n:73, cat:"Dining Events",       venue:"Benjarong",                                            loc:"Dusit Thani Dubai",   deal:"2-course AED 99 / 3-course AED 109",saving:"From AED 99",period:"Mon–Fri 12–3pm",ig:["Benjarong"]},
+  {n:74, cat:"Dining Events",       venue:"French Brasserie (JLT)",                               loc:"JLT",                 deal:"2-course AED 79 / 3-course AED 99; glass of wine or beer +AED 20",saving:"From AED 79",period:"Mon–Fri 12–3pm",ig:[]},
+  {n:75, cat:"Dining Events",       venue:"SOON Restaurant",                                      loc:"JLT",                 deal:"Pan-Asian bold bites, 2-course AED 105 / 3-course AED 125",saving:"From AED 105",period:"Mon–Fri 12–3pm",ig:["SOON Izakaya"]},
+  {n:76, cat:"Promotions", venue:"Bla Bla Dubai (Wilder Wednesday)",                     loc:"JBR",                 deal:"8 signature cocktails across 8 bars for AED 250; complete stamp card wins a prize",saving:"AED 250 (8 cocktails)",period:"Wednesdays",ig:["Bla Bla"]},
+  {n:77, cat:"Promotions", venue:"Offside at JA Ocean View Hotel",                       loc:"JA Ocean View",       deal:"Wings night deal every Tuesday",saving:"Varies",period:"Tuesdays",ig:[]},
+  {n:78, cat:"Promotions", venue:"The First Group (various venues)",                     loc:"Dubai (various)",     deal:"Ladies: 3 free drinks; Gents: 3 drinks for AED 99 + 30% off food",saving:"Free / AED 99",period:"Weekly",ig:[]},
+  {n:79, cat:"Promotions", venue:"The First Group (Seafood Market)",                     loc:"Dubai",               deal:"Fresh seafood by the gram, choose cooking style + sides + sauces",saving:"Market pricing",period:"Weekly",ig:[]},
+  {n:80, cat:"Promotions", venue:"La Resaca at El Toro (The First Group)",               loc:"Dubai",               deal:"Selected drinks at AED 35",saving:"AED 35",period:"Weekly",ig:["El Toro"]},
+  {n:81, cat:"Platforms & Apps",    venue:"HSBC I Love Dining (128 venues)",                      loc:"Dubai (various)",     deal:"15–25% off at 128 Dubai venues including Go Organic, Mesa (Hilton), Wox, Jones the Grocer",saving:"15–25% off",period:"Year-round",ig:["HSBC"]},
+  {n:82, cat:"Platforms & Apps",    venue:"Emirates My Pass (hundreds of venues)",                loc:"Dubai & UAE",         deal:"Show Emirates boarding pass for discounts on dining, spa, golf, leisure",saving:"Various discounts",period:"Year-round",ig:[]},
+  {n:83, cat:"Platforms & Apps",    venue:"Meraas Rewards (CityWalk, Boxpark, Bluewaters, La Mer, Last Exit)",loc:"Dubai (Meraas venues)",deal:"2-for-1 offers at all Meraas venues via Meraas Rewards app",saving:"2-for-1",period:"Year-round",ig:["Meraas"]},
+  {n:84, cat:"Platforms & Apps",    venue:"Zomato / Talabat",                                     loc:"Dubai & UAE",         deal:"Zomato 50% first 3 orders (code EAT50); Talabat 15% off (code varies)",saving:"Up to 50% off",period:"Year-round",ig:["Zomato"]},
+  {n:85, cat:"Platforms & Apps",    venue:"Speakeasy Bar & Restaurant",                           loc:"JBR / The Marina",    deal:"40% off à la carte for Dubai residents",saving:"40% off",period:"Year-round",ig:["Speakeasy"]},
+  {n:86, cat:"Hotel Deals",    venue:"Jumeirah Hotels (Eid Package)",                        loc:"Dubai & Abu Dhabi",   deal:"BBQ brunch from AED 159 / Emirati buffet AED 165 / Kids AED 75",saving:"From AED 159",period:"Eid period",ig:["Jumeirah Group"]},
+  {n:87, cat:"Hotel Deals",    venue:"Fairmont The Palm (Easter Brunch)",                    loc:"Palm Jumeirah",       deal:"Soft AED 295 / House Beverages AED 395 / Bubbly AED 495 / Kids AED 175",saving:"From AED 295",period:"Easter 2026",ig:["Fairmont The Palm"]},
+  {n:88, cat:"Hotel Deals",    venue:"Mercure Dubai (Eid Stay + F&B)",                       loc:"Dubai",               deal:"AED 499/night One Bedroom Deluxe Suite; half-board; kids under 12 free",saving:"AED 499/night half-board",period:"Eid period",ig:["Mercure Dubai"]},
+  {n:89, cat:"Hotel Deals",    venue:"Pullman Dubai Jumeirah Lakes Towers",                  loc:"JLT",                 deal:"20% dining discount + padel session + late check-out + breakfast",saving:"20% off dining",period:"Year-round",ig:["Pullman"]},
+  {n:90, cat:"Hotel Deals",    venue:"One&Only One Za'abeel",                               loc:"Dubai",               deal:"10 deals including brunches, pool days, business lunches & afternoon teas",saving:"Various",period:"Year-round",ig:["One&Only"]},
+  {n:91, cat:"Trade Rates",       venue:"Mileo Hotel The Palm",                                 loc:"Palm Jumeirah",       deal:"Complimentary overnight stays for stranded travellers amid conflict",saving:"FREE stays",period:"Conflict period",ig:[]},
+  {n:92, cat:"Trade Rates",       venue:"Marriott Resort Palm Jumeirah",                        loc:"Palm Jumeirah",       deal:"Significantly lower rates vs typical pricing during conflict surge",saving:"Trade rate",period:"Conflict period",ig:["Marriott"]},
+  {n:93, cat:"Trade Rates",       venue:"Taj Dubai",                                            loc:"Downtown Dubai",      deal:"Significantly lower rates with F&B perks during conflict period",saving:"Trade rate",period:"Conflict period",ig:[]},
+  {n:94, cat:"Trade Rates",       venue:"LEVA Hotel",                                           loc:"Dubai",               deal:"20% off best available rate for UAE residents (code GSTLV)",saving:"20% off",period:"Year-round",ig:[]},
+  {n:95, cat:"Trade Rates",       venue:"Entertainer 'One Heart' — Sunset Hospitality Group (Black Tap, Luigia, SushiSamba)", loc:"Dubai",deal:"First 50,000 people get free 6-month access; BOGO at all participating venues",saving:"Free (AED 650 value)",period:"Year-round",ig:["Entertainer App"]},
+  {n:96, cat:"Promotions",    venue:"Gulfood Badge Holders at McGettigan's DWTC",           loc:"DWTC",                deal:"⚠️ Gulfood 2026 (Feb 17–21) has passed — verify if offer extended. 20% off full-priced meals with Gulfood badge (breakfast, lunch, dinner)",saving:"20% off",period:"Gulfood period",ig:["McGettigan's DWTC"]},
+  {n:97, cat:"Promotions",    venue:"Paramount Hotel Dubai — Her Secret Hours (Flashback Speakeasy)",loc:"Paramount Hotel",deal:"Cocktails, music & style for ladies",saving:"Varies",period:"Weekly",ig:["Paramount Hotel"]},
+  {n:98, cat:"Promotions",    venue:"Paramount Hotel Dubai — Groovy Hour (Pacific Groove)", loc:"Paramount Hotel",     deal:"Retro 70s vibes + cocktails + bites",saving:"Varies",period:"Wednesdays 6–11pm",ig:["Paramount Hotel"]},
+  {n:99, cat:"Promotions",    venue:"Malibu Deck — Paramount Hotel Dubai",                  loc:"Paramount Hotel",     deal:"Innovative cocktails + DJ Yana sunset beats daily",saving:"Varies",period:"Daily",ig:["Malibu Deck"]},
+  {n:100,cat:"Promotions",    venue:"Bask Beach Club (Sundazar)",                           loc:"Palm Jumeirah (Fairmont)",deal:"Unlimited select cocktails & wines + sunbed + VIP access, AED 280",saving:"AED 280 all-in",period:"Sundays",ig:["Bask Beach Club"]},
+  // ── NEW 50 ────────────────────────────────────────────────────────────────
+  {n:101,cat:"Drinks & Nightlife",     venue:"La Coco",                                              loc:"Andaz Dubai The Palm",deal:"Selected house beverages from AED 30 daily 4–7pm & 9–10pm; Mexican-inspired cocktails & bites",saving:"From AED 30",period:"Daily 4–7pm",ig:["La Coco"]},
+  {n:102,cat:"Drinks & Nightlife",     venue:"Iris Dubai",                                           loc:"Al Meydan",           deal:"Drinks from AED 20; Sun–Fri 5–8pm happy hour. Ladies: 3 hrs unlimited drinks + food for AED 150",saving:"From AED 20",period:"Sun–Fri 5–8pm",ig:["Iris Dubai"]},
+  {n:103,cat:"Drinks & Nightlife",     venue:"Kickers Sports Bar",                                   loc:"Dubai Sports City",   deal:"Beers from AED 30 — ultimate happy hour every day 5–8pm for sports fans",saving:"From AED 30",period:"Daily 5–8pm",ig:["Kickers Sports Bar"]},
+  {n:104,cat:"Drinks & Nightlife",     venue:"Reform Social & Grill",                                loc:"The Lakes, Emirates Hills",deal:"Extended happy hour at Dubai's first British gastropub; garden setting with craft ales & spirits",saving:"Discounted",period:"Mon–Thu 4–8pm",ig:["Reform Social & Grill"]},
+  {n:105,cat:"Drinks & Nightlife",     venue:"Barfly by Buddha-Bar",                                 loc:"Hilton Dubai Palm Jumeirah",deal:"30% off à la carte menu & selected drinks, daily 5–7pm; rooftop views over Palm",saving:"30% off",period:"Daily 5–7pm",ig:["Barfly"]},
+  {n:106,cat:"Drinks & Nightlife",     venue:"Fogo de Chão — Bar Fogo",                              loc:"DIFC",                deal:"All-day happy hour 4–8pm: Brazilian cocktails, South American wines, beers + tasting meat boards",saving:"All-day HH",period:"Daily 4–8pm",ig:["Fogo de Chão"]},
+  {n:107,cat:"Drinks & Nightlife",     venue:"STK Dubai",                                            loc:"JBR",                 deal:"Happy hour Mon–Fri 2:30–6:30pm, weekends 2:30–5:30pm + late night Sun–Thu 10pm–close",saving:"Extended HH",period:"Mon–Fri 2:30–6:30pm",ig:["STK Dubai"]},
+  {n:108,cat:"Drinks & Nightlife",         venue:"AMOR",                                                 loc:"The Address Opera Residences, Downtown Dubai",deal:"Ladies receive 2 complimentary drinks every Wednesday; vibrant downtown venue",saving:"2 free drinks",period:"Wednesdays",ig:[]},
+  {n:109,cat:"Drinks & Nightlife",         venue:"The MAINE Oyster Bar & Grill",                         loc:"JBR / DoubleTree Hilton",deal:"Free unlimited house wine for ladies at the bar every Wednesday 8pm–midnight",saving:"FREE unlimited wine",period:"Wednesdays",ig:["The MAINE"]},
+  {n:110,cat:"Japanese",         venue:"SOON Izakaya",                                         loc:"JLT",                 deal:"Completely free drinks at the bar for ladies every Tuesday 7–9pm",saving:"FREE drinks",period:"Tuesdays 7–9pm",ig:["SOON Izakaya"]},
+  {n:111,cat:"Drinks & Nightlife",         venue:"Paros at Taj Jumeirah Lakes Towers",                   loc:"Taj JLT (48th floor)", deal:"Free-flowing drinks at the bar every Wednesday 7–11pm + spectacular city views",saving:"FREE drinks 4 hrs",period:"Wednesdays 7–11pm",ig:[]},
+  {n:112,cat:"Drinks & Nightlife",         venue:"Fogo de Chão",                                         loc:"DIFC",                deal:"Ladies Night: fire-roasted meat cuts + Brazilian side dishes + house beverages, AED 249/person, 7–10pm",saving:"AED 249",period:"Wednesdays 7–10pm",ig:["Fogo de Chão"]},
+  {n:113,cat:"Drinks & Nightlife",         venue:"Barfly by Buddha-Bar",                                 loc:"Hilton Dubai Palm Jumeirah",deal:"Ladies Night every Thursday — cocktails + stunning Palm views for AED 149 per person",saving:"AED 149/person",period:"Thursdays",ig:["Barfly"]},
+  {n:114,cat:"Drinks & Nightlife",         venue:"EDIT",                                                 loc:"Dubai",               deal:"Free entry + 2 complimentary drinks for ladies until 1am weekly",saving:"Free entry + 2 drinks",period:"Weekly",ig:[]},
+  {n:115,cat:"Dining Events",               venue:"Maiden Shanghai",                                      loc:"FIVE Palm Jumeirah",  deal:"'Naughty Noodles' party brunch: unlimited gourmet Chinese food + bottomless artisanal cocktails, AED 450 house / AED 500 premium, Saturdays 1–4:30pm",saving:"AED 450+",period:"Saturdays 1–4:30pm",ig:["Maiden Shanghai"]},
+  {n:116,cat:"Italian",               venue:"Trattoria",                                            loc:"Souk Madinat Jumeirah",deal:"Lazy Sunday brunch: AED 195 soft drinks / AED 270 house beverages, 12–6pm",saving:"From AED 195",period:"Sundays 12–6pm",ig:[]},
+  {n:117,cat:"Dining Events",               venue:"En Fuego",                                             loc:"Atlantis The Palm",   deal:"Sharing set menu + generous free-flow cocktails + live mariachi + acrobatics + fire-breathers",saving:"All-inclusive",period:"Fridays/Saturdays",ig:["En Fuego"]},
+  {n:118,cat:"Dining Events",               venue:"Saffron",                                              loc:"Atlantis The Palm",   deal:"Dubai's iconic Asian party brunch — AED 525 house beverages / AED 575 sparkling, every Saturday 1–4pm",saving:"From AED 525",period:"Saturdays 1–4pm",ig:["Saffron"]},
+  {n:119,cat:"Dining Events",               venue:"Buddha-Bar",                                           loc:"Grosvenor House, Dubai Marina",deal:"Pan-Asian brunch: AED 450 soft / AED 550 house beverages, Saturdays 1–4pm; 3 hours of Pan-Asian sharing",saving:"From AED 450",period:"Saturdays 1–4pm",ig:["Buddha-Bar"]},
+  {n:120,cat:"Dining Events",               venue:"Romeo Lane",                                           loc:"Business Bay",        deal:"Progressive Indo-Japanese sharing brunch: AED 299 soft / AED 399 house beverages, Saturdays 1–4pm, live entertainment",saving:"From AED 299",period:"Saturdays 1–4pm",ig:["Romeo Lane"]},
+  {n:121,cat:"Latin",               venue:"COYA Dubai",                                           loc:"Four Seasons Jumeirah Beach",deal:"Peruvian party brunch with anticuchos, ceviche, clay pots: AED 409 non-alc / AED 609 house / AED 779 premium, Fridays",saving:"From AED 409",period:"Fridays",ig:["COYA Dubai"]},
+  {n:122,cat:"Dining Events",               venue:"Brasserie Boulud",                                     loc:"Sofitel Dubai The Obelisk (Wafi)",deal:"Michelin-recognised French brunch with live jazz, escargot, steak tartare: AED 345 soft / AED 495 house / AED 695 champagne, Saturdays 1–4pm",saving:"From AED 345",period:"Saturdays 1–4pm",ig:["Brasserie Boulud"]},
+  {n:123,cat:"Italian",               venue:"Pizza Express (DoubleTree Hilton Business Bay)",       loc:"Business Bay",        deal:"Italian brunch: starters, 1 main, dessert. AED 145 soft / AED 175 house beverages, Saturdays 1–4pm",saving:"From AED 145",period:"Saturdays 1–4pm",ig:["Pizza Express"]},
+  {n:124,cat:"Dining Events",               venue:"Spartan Sports Bar",                                   loc:"Sheraton Mall of the Emirates",deal:"Unlimited house drinks + 1 bar bite for AED 199, Sundays 4–6pm; great value at a 5-star hotel",saving:"AED 199 unlimited",period:"Sundays 4–6pm",ig:["Spartan Sports Bar"]},
+  {n:125,cat:"Dining Events",               venue:"McGettigan's JLT (Weekend Brunch)",                    loc:"JLT",                 deal:"Unlimited drinks pub grub brunch: AED 249 house / AED 349 sparkling, Saturdays 1–4pm + live music",saving:"From AED 249",period:"Saturdays 1–4pm",ig:["McGettigan's"]},
+  {n:126,cat:"Dining Events",               venue:"Rüya",                                                 loc:"Grosvenor House, Dubai Marina",deal:"Turkish-inspired Friday & Saturday brunch: AED 225 soft / AED 425 house / AED 525 Italian sparkling — live DJ",saving:"From AED 225",period:"Fri & Sat",ig:["Rüya"]},
+  {n:127,cat:"Japanese",               venue:"Zuma Dubai",                                           loc:"DIFC",                deal:"'Baikingu' Japanese buffet brunch: AED 545 from; live sushi & robata stations. Saturdays 12:30pm+",saving:"From AED 545",period:"Saturdays",ig:["Zuma Dubai"]},
+  {n:128,cat:"Japanese",               venue:"Nobu Dubai",                                           loc:"Atlantis The Palm",   deal:"'High Brunch': AED 385 non-alc / AED 585 unlimited alc, Fridays 12–4pm. Nobu signatures + bottomless drinks",saving:"From AED 385",period:"Fridays 12–4pm",ig:["Nobu Dubai"]},
+  {n:129,cat:"Dining Events",               venue:"Chez Wam",                                             loc:"Dubai",               deal:"'Chez What' Sunday brunch: sharing menu by Chef Hadrien from AED 395, live DJ (80s/90s/R&B), DIY Bloody Mary station, 1–5pm. MENA's 50 Best #40",saving:"From AED 395",period:"Sundays 1–5pm",ig:["Chez Wam"]},
+  {n:130,cat:"Dining Events",               venue:"The Guild",                                            loc:"ICD Brookfield Place, DIFC",deal:"'Brunch Society': grand brasserie live stations + caviar canapés. AED 449 soft / AED 549 house / AED 749 bubbly. Michelin Opening of the Year 2024",saving:"From AED 449",period:"Weekends",ig:["The Guild"]},
+  {n:131,cat:"Dining Events",               venue:"Gaucho Dubai",                                         loc:"DIFC",                deal:"Argentine terrace brunch: signature Asado cuts, empanadas & chimichurri, every Friday in DIFC",saving:"Set menu",period:"Fridays",ig:["Gaucho Dubai"]},
+  {n:132,cat:"Leisure",    venue:"Nikki Beach",                                          loc:"Pearl Jumeirah",      deal:"Sun lounger day pass: AED 200 (Tue–Thu, AED 100 F&B credit) / AED 250 (Fri–Sun, AED 100 F&B credit)",saving:"AED 100 F&B credit",period:"Tue–Sun",ig:["Nikki Beach"]},
+  {n:133,cat:"Leisure",    venue:"Delano Dubai",                                         loc:"Bluewaters Island",   deal:"Beach & pool day pass: AED 200 weekdays / AED 250 weekends — fully redeemable on F&B. Miami meets Dubai",saving:"Fully redeemable",period:"Daily",ig:["Delano"]},
+  {n:134,cat:"Leisure",    venue:"Cove Beach Dubai",                                     loc:"La Vie, JBR",         deal:"Beach club day pass: AED 200 (Mon/Tue/Thu, fully redeemable) / AED 300 (other days, fully redeemable)",saving:"Fully redeemable",period:"Daily",ig:["Cove Beach"]},
+  {n:135,cat:"Leisure",    venue:"Zero Gravity",                                         loc:"Dubai Marina",        deal:"Ladies free entry weekdays (guestlist); ~AED 299 weekends incl. all-day brunch/drunch; iconic beach + pool + skyline views",saving:"Free weekdays (ladies)",period:"Daily",ig:["Zero Gravity"]},
+  {n:136,cat:"Leisure",    venue:"J1 Beach",                                             loc:"La Mer, Jumeirah",    deal:"Urban riviera with 12+ licensed beachfront restaurants & beach clubs; day pass from AED 400 (fully redeemable on F&B)",saving:"From AED 400 (redeemable)",period:"Daily",ig:["J1 Beach"]},
+  {n:137,cat:"Leisure",    venue:"Bla Bla Dubai (Beach)",                                loc:"JBR",                 deal:"21 bars, restaurant & beach club with Bali-inspired bar; pool day pass AED 200 Mon–Fri / AED 300 Sat–Sun, fully redeemable",saving:"Fully redeemable",period:"Daily",ig:["Bla Bla"]},
+  {n:138,cat:"Dining Events",       venue:"La Petite Maison (LPM)",                               loc:"DIFC",                deal:"Michelin-recognised French-Mediterranean set lunch from AED 119; slow-roasted meats, grilled seafood, seasonal pastas",saving:"From AED 119",period:"Mon–Fri 12–3pm",ig:["La Petite Maison"]},
+  {n:139,cat:"Japanese",       venue:"Zuma Dubai",                                           loc:"DIFC",                deal:"Japanese robata-grill business lunch, Mon–Fri 12–3:30pm; sharing platters of sashimi, robata skewers & maki",saving:"Set menu",period:"Mon–Fri 12–3:30pm",ig:["Zuma Dubai"]},
+  {n:140,cat:"Japanese",       venue:"Nobu Dubai",                                           loc:"Atlantis The Palm",   deal:"Express Lunch menu AED 165 per person — Nobu signatures at a fraction of dinner price, Fri–Sun 12:30–3:30pm",saving:"AED 165",period:"Fri–Sun 12:30–3:30pm",ig:["Nobu Dubai"]},
+  {n:141,cat:"Dining Events",       venue:"Mythos Kouzina & Grill",                               loc:"JLT",                 deal:"Award-winning Greek taverna; business set lunch at Armada Blue Bay — MENA 50 Best Discovery venue",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Mythos"]},
+  {n:142,cat:"Dining Events",       venue:"Ninive",                                               loc:"Emirates Towers",     deal:"Michelin Bib Gourmand, Middle Eastern & North African cuisine; set business lunch in Trade Centre area",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Ninive"]},
+  {n:143,cat:"Dining Events",       venue:"Chez Wam",                                             loc:"Dubai",               deal:"Innovative French cuisine; MENA's 50 Best #40 — chef-driven lunch menus at accessible prices",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Chez Wam"]},
+  {n:144,cat:"Dining Events",       venue:"Rüya",                                                 loc:"Grosvenor House, Dubai Marina",deal:"Turkish fine dining set lunch in sophisticated Marina surroundings — full à la carte at set price",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Rüya"]},
+  {n:145,cat:"Dining Events",       venue:"Brasserie Boulud",                                     loc:"Sofitel Dubai The Obelisk (Wafi)",deal:"Michelin-recognised French brasserie lunch — French classics including steak tartare and seasonal salads",saving:"Set menu",period:"Mon–Fri 12–3pm",ig:["Brasserie Boulud"]},
+  {n:146,cat:"Japanese", venue:"SOON Izakaya — Unlimited Sushi Night",                 loc:"JLT",                 deal:"All-you-can-eat sushi night for AED 160 per person — nigiri, maki, hand rolls + Japanese izakaya small plates",saving:"AED 160 unlimited",period:"Wednesdays 6–10pm",ig:["SOON Izakaya"]},
+  {n:147,cat:"Promotions", venue:"Iris Dubai — Ladies Wednesday",                        loc:"Al Meydan",           deal:"Ladies Night: AED 150 for 3 hours unlimited drinks + choice of food item; rooftop lounge atmosphere",saving:"AED 150 (3 hrs)",period:"Wednesdays",ig:["Iris Dubai"]},
+  {n:148,cat:"Promotions", venue:"STK Dubai — Ladies Night",                             loc:"JBR",                 deal:"Upscale steakhouse ladies night with signature cocktails + DJ sets; exclusive JBR steakhouse experience",saving:"Varies",period:"Tuesdays 8pm+",ig:["STK Dubai"]},
+  {n:149,cat:"Promotions", venue:"Saffron (Atlantis The Palm) — Saturday Party Brunch",  loc:"Palm Jumeirah",       deal:"Dubai's most iconic party brunch: Asian live buffet + bottomless cocktails + world-class DJ; sell-out event every week",saving:"From AED 525",period:"Saturdays",ig:["Saffron"]},
+  {n:150,cat:"Promotions", venue:"Gaucho Dubai — Terrace Night Brunch (Tapas)",          loc:"DIFC",                deal:"Tantalising tapas + Argentine-inspired small bites + cocktails on DIFC terrace; Friday evening social event",saving:"Set menu",period:"Fridays",ig:["Gaucho Dubai"]},
+  // ── BATCH 3: 30 NEW VENUES (151–180) ─────────────────────────────────────
+  // Happy Hours
+  {n:151,cat:"Drinks & Nightlife",     venue:"Sexy Fish Dubai",                                      loc:"DIFC",                deal:"Happy hour daily 5–8pm: signature cocktails & bubbly from AED 45; also 'Sundown Somewhere' Mon–Fri 4–7pm",saving:"From AED 45",period:"Daily 5–8pm",ig:["Sexy Fish"]},
+  {n:152,cat:"Drinks & Nightlife",     venue:"GABA Dubai",                                           loc:"Dubai",               deal:"All-you-can-sip happy hour AED 90 — unlimited mixed drinks Sun–Thu 5pm–1am; one of the best value unlimited deals in Dubai",saving:"AED 90 unlimited",period:"Sun–Thu 5pm–1am",ig:["GABA"]},
+  {n:153,cat:"Drinks & Nightlife",     venue:"Fibber Magee's",                                       loc:"Sheikh Zayed Road",   deal:"Drinks from AED 25; Sun–Fri 1–7pm, Sat 2–8pm happy hour; classic Irish pub with great value all day",saving:"From AED 25",period:"Sun–Fri 1–7pm",ig:["Fibber Magee's"]},
+  // Ladies Nights
+  {n:154,cat:"Drinks & Nightlife",         venue:"Indi 16",                                              loc:"Business Bay",        deal:"Every Wednesday 7–11pm: unlimited drinks 3 hrs AED 150 + main course + 2 starters for ladies",saving:"AED 150 (3 hrs + food)",period:"Wednesdays 7–11pm",ig:["Indi 16"]},
+  {n:155,cat:"Japanese",         venue:"Virgin Izakaya — Joshi Kai Ladies Night",              loc:"Bluewaters Island",   deal:"Free-flowing drinks + 2-course menu + live DJ for AED 199 (upgrade to 3 courses AED 239); skyline & Ain Dubai views, Wednesdays 7pm+",saving:"AED 199 (drinks + 2 courses)",period:"Wednesdays 7pm+",ig:["Virgin Izakaya"]},
+  {n:156,cat:"Drinks & Nightlife",         venue:"LSB (Lock Stock & Barrel Business Bay)",               loc:"Business Bay",        deal:"Unlimited free drinks for ladies at the bar every Thursday 8–11pm — 3 full hours of complimentary drinks",saving:"FREE drinks (3 hrs)",period:"Thursdays 8–11pm",ig:["Lock Stock & Barrel"]},
+  // Brunches
+  {n:157,cat:"Dining Events",               venue:"Swingers Dubai",                                       loc:"Dubai (Crazy Golf venue)",deal:"Friday Night Brunch meets crazy golf: 3 themed courses + unlimited drinks + bites + DJ. AED 295 soft / AED 395 house / AED 495 premium, Fri 7:30–11pm",saving:"From AED 295",period:"Fridays 7:30–11pm",ig:["Swingers Dubai"]},
+  {n:158,cat:"Dining Events",               venue:"BrewDog Dubai",                                        loc:"Bluewaters Island",   deal:"Craft-beer Saturday Brunch: sharing starters + hearty mains + dessert + drinks + live drummers & dancers + darts & bowling. AED 350 house / AED 450 premium, Sat 1–4pm",saving:"From AED 350",period:"Saturdays 1–4pm",ig:["BrewDog Dubai"]},
+  {n:159,cat:"Dining Events",               venue:"Ruby Ru by Iris",                          loc:"Al Meydan / Dubai",   deal:"Skyline-view Saturday brunch from the team behind Iris: French-Japanese 3-course sharing menu + sushi station + live DJ + unlimited drinks. From AED 300, Sat 1–5pm",saving:"From AED 300",period:"Saturdays 1–5pm",ig:["Ruby Ru by Iris"]},
+  {n:160,cat:"Dining Events",               venue:"Sip Song at Rixos JBR",                               loc:"Rixos Premium JBR",   deal:"Neon Night Bangkok-inspired brunch: DJ + 3-course set menu + party vibes. AED 199 soft / AED 299 house / AED 399 premium, Fri 8–11:30pm",saving:"From AED 199",period:"Fridays 8–11:30pm",ig:["Sip Song"]},
+  {n:161,cat:"Dining Events",               venue:"STK Dubai — Vegas Day Brunch",                         loc:"JBR",                 deal:"Vegas-style party brunch at the iconic steakhouse: 3-course meal with steak + bottomless drinks + live entertainment, Saturdays 1–4pm",saving:"All-inclusive",period:"Saturdays 1–4pm",ig:["STK Dubai"]},
+  // Business Lunches
+  {n:162,cat:"Dining Events",       venue:"BOCA",                                                 loc:"Gate Village 6, DIFC",deal:"Seasonal European set lunch: Dibba Bay oysters, quail salad, sea bream & wagyu. AED 118 (2-course) / AED 145 (3-course), Mon–Fri 12:30–3:30pm",saving:"From AED 118",period:"Mon–Fri 12–3pm",ig:["BOCA"]},
+  {n:163,cat:"Dining Events",       venue:"Bull & Bear",                                          loc:"Waldorf Astoria DIFC (Level 18)",deal:"Art Deco steakhouse with Burj Khalifa views: refined set menu AED 125 (2-course) / AED 155 (3-course), Mon–Fri 12:30–3:30pm",saving:"From AED 125",period:"Mon–Fri 12–3pm",ig:["Bull & Bear"]},
+  {n:164,cat:"Dining Events",       venue:"Rowley's",                                             loc:"DIFC",                deal:"London's iconic mono-dish steakhouse: perfectly grilled steak + crispy salad + unlimited golden fries for AED 90. Mon–Fri 12–3pm",saving:"AED 90 (steak + unlimited fries)",period:"Mon–Fri 12–3pm",ig:["Rowley's"]},
+  {n:165,cat:"Dining Events",       venue:"NONYA",                                                loc:"Taj JLT (44th floor)", deal:"Elevated Pan-Asian 4-course set lunch AED 99 per person, Mon–Fri 12–4pm — stunning JLT skyline views at exceptional value",saving:"AED 99 (4-course)",period:"Mon–Fri 12–4pm",ig:["NONYA"]},
+  // Beach & Pool Clubs
+  {n:166,cat:"Leisure",    venue:"Wet Deck — W Dubai The Palm",                          loc:"Palm Jumeirah (W Dubai)",deal:"Iconic infinity pool day pass: AED 300 weekdays / AED 350 weekends — fully redeemable on F&B; Ladies Day Tue 12–4pm AED 199",saving:"Fully redeemable",period:"Daily 10am–9pm",ig:["Wet Deck"]},
+  {n:167,cat:"Leisure",    venue:"BCH:CLB — W Dubai The Palm",                           loc:"Palm Jumeirah (W Dubai)",deal:"Chic beachfront club: AED 200 Mon–Thu / AED 300 Fri–Sun & public holidays — all fully redeemable on food & drinks; signature orange day beds",saving:"Fully redeemable",period:"Daily",ig:["BCH:CLB"]},
+  {n:168,cat:"Leisure",    venue:"Zing Beach Bar — Hilton Dubai Palm Jumeirah",          loc:"Palm Jumeirah (Hilton)",deal:"Beachfront access with one of city's longest pools: AED 200 weekdays / AED 250 weekends — fully redeemable on F&B",saving:"Fully redeemable",period:"Daily",ig:["Zing Beach Bar"]},
+  // Hotel F&B Packages
+  {n:169,cat:"Hotel Deals",    venue:"Hotel Indigo Dubai Downtown",                          loc:"Downtown Dubai",      deal:"UAE Resident staycation from AED 500/night includes AED 500 F&B credit for full stay + breakfast for 2 + early check-in/late check-out",saving:"AED 500 F&B credit",period:"Year-round",ig:["Hotel Indigo Dubai"]},
+  {n:170,cat:"Hotel Deals",    venue:"The Ritz-Carlton Dubai",                               loc:"JBR",                 deal:"Resident deal: 25% off rooms + 20% off all F&B + 30% off spa + free dining for kids under 14. From AED 1,200/night (code: E4000)",saving:"20% off F&B + more",period:"Year-round",ig:["Ritz-Carlton Dubai"]},
+  {n:171,cat:"Hotel Deals",    venue:"Grand Hyatt Dubai",                                    loc:"Dubai Healthcare City",deal:"GCC Resident deal (code GCC20): 20% off room rates + 20% off selected restaurants + free waterpark access + complimentary breakfast. From AED 400/night",saving:"20% off dining",period:"Year-round",ig:[]},
+  {n:172,cat:"Hotel Deals",    venue:"Atlantis The Palm — UAE Resident Offers",              loc:"Palm Jumeirah",       deal:"Exclusive UAE resident bundles: dining packages, Aquaventure + meal combos, room+F&B packages with up to 40% off",saving:"Up to 40% off",period:"Year-round",ig:["Atlantis Dubai"]},
+  {n:173,cat:"Hotel Deals",    venue:"Anantara The Palm Dubai Resort",                       loc:"Palm Jumeirah",       deal:"GCC & UAE resident exclusive: discounted room rates + complimentary breakfast + resort credits for F&B & spa",saving:"Resort credits",period:"Year-round",ig:["Anantara Palm"]},
+  // Discount Platforms
+  {n:174,cat:"Platforms & Apps",    venue:"Smiles UAE (Etisalat/e&)",                             loc:"Dubai & UAE",         deal:"BOGO dining deals + loyalty cashback + food delivery discounts across hundreds of UAE restaurants; integrated with e& telecom rewards",saving:"BOGO + cashback",period:"Year-round",ig:["Smiles UAE"]},
+  {n:175,cat:"Platforms & Apps",    venue:"Cobone Dubai",                                         loc:"Dubai & UAE",         deal:"Up to 75% off dining vouchers — restaurant deals, buffet vouchers, brunch packages and afternoon teas at top Dubai venues",saving:"Up to 75% off",period:"Year-round",ig:["Cobone"]},
+  // Special Promotions
+  {n:176,cat:"Promotions",    venue:"Hawkerboi",                                            loc:"Dubai",               deal:"Award-winning 7-course chef's tasting menu for AED 275 — one of Dubai's best value fine-dining tasting experiences",saving:"AED 275 (7 courses)",period:"Daily",ig:["Hawkerboi"]},
+  {n:177,cat:"Promotions",    venue:"Kaimana",                                              loc:"Dubai",               deal:"Daily set menu AED 149 (7pm–11pm) — innovative cuisine at accessible price point; evening dining destination",saving:"AED 149 set menu",period:"Daily 7–11pm",ig:["Kaimana"]},
+  {n:178,cat:"Latin",    venue:"Amazónico Dubai — UAE Resident Deal",                  loc:"DIFC",                deal:"Limited-time UAE resident offer: 25% off brunch packages + 20% off weekday business lunches — Latin American tropical fine dining",saving:"Up to 25% off",period:"Limited time",ig:["Amazónico"]},
+  {n:179,cat:"Promotions",    venue:"CARBONE Dubai",                                        loc:"Atlantis The Royal",  deal:"Newly opened iconic Italian-American from Major Food Group — home of the celebrity dining scene; signature red-sauce dishes in a 1950s NYC-inspired setting",saving:"Signature dining",period:"Open 2026",ig:["CARBONE Dubai"]},
+  {n:180,cat:"Promotions",    venue:"Gymkhana DIFC",                                        loc:"DIFC",                deal:"London's Michelin-starred Indian restaurant now in Dubai — elevated North Indian cuisine with tandoor, curries & regional specialities in DIFC's most anticipated 2026 opening",saving:"Fine dining",period:"Open 2026",ig:["Gymkhana DIFC"]},
+  {n:181,cat:"Japanese",venue:"ROKA Dubai — Industry Sundays",loc:"DIFC",deal:"25% off food & drinks all day every Sunday for industry professionals. Available in bar, restaurant & terrace.",saving:"25%",period:"Every Sunday",ig:["roka_dubai"]},
+  {n:182,cat:"Leisure",venue:"Kaimana Beach — BOGO Happy Hour",loc:"JBR",deal:"Buy one drink, get one FREE every Monday–Friday during Happy Hour.",saving:"50% off",period:"Mon–Fri, 3–8 PM",ig:["kaimana"]},
+  {n:183,cat:"Trade Rates",venue:"Narnia Downtown",loc:"Downtown Dubai",deal:"50% discount for hospitality professionals. Show proof of employment.",saving:"50% off",period:"Year-round",ig:["narnia_downtown"]},
+  {n:184,cat:"Trade Rates",venue:"The Black Sheep Dubai",loc:"Dubai",deal:"15% off for all hospitality workers. Show valid proof of employment to redeem.",saving:"15%",period:"Year-round",ig:["blacksheepdubai"]},
+  {n:185,cat:"Trade Rates",venue:"Rodeo Drive Dubai",loc:"Dubai",deal:"Open welcome deal for all industry workers. Just show up and let them know you work in hospitality.",saving:"Varies",period:"Year-round",ig:["rodeodrivedubai"]},
+  {n:186,cat:"Trade Rates",venue:"Barrafina DIFC",loc:"DIFC",deal:"50% off food and cocktails — industry deal available 4 days a week (Monday–Thursday).",saving:"50% off",period:"Mon–Thu",ig:["barrafinadubai"]},
+  {n:187,cat:"Hotel Deals",venue:"OliWino — W The Palm",loc:"Palm Jumeirah",deal:"Iftar dining experience at AED 239 per person. Available throughout Ramadan.",saving:"AED 239pp",period:"Ramadan 2026",ig:["olivinowthepalm"]},
+  {n:188,cat:"Trade Rates",venue:"The Lion in the Sun",loc:"Dubai",deal:"30% discount on everything for hospitality professionals.",saving:"30% off",period:"Year-round",ig:["thelioninthesundubai"]},
+  {n:189,cat:"Hotel Deals",venue:"JW Marriott Hotel Dubai — Iftar",loc:"Deira",deal:"Buy 1 get 1 free Iftar — effectively AED 140 per person (regular AED 280). Book ahead.",saving:"50% (BOGO)",period:"Ramadan 2026",ig:["jwmarriottdubai"]},
+  {n:190,cat:"Trade Rates",venue:"AMG Kaffehaus",loc:"Dubai",deal:"30% off for all hoteliers. Comedy nights also hosted regularly for the industry crowd.",saving:"30% off",period:"Year-round",ig:["amgkaffehaus"]},
+  {n:191,cat:"Promotions",venue:"Reform Social & Grill — Ninja Deal",loc:"Dubai Marina",deal:"25% off à la carte menu + 2-for-1 Sunday Roasts. Request a digital discount card via DM.",saving:"25% + BOGO",period:"Year-round",ig:["reformsocialgrill"]},
+  {n:192,cat:"Drinks & Nightlife",venue:"MayaBay Dubai",loc:"Dubai",deal:"AED 200 per person from 4PM — 3 hours of unlimited selected drinks plus a bucket of dim sum.",saving:"AED 200pp",period:"Daily from 4 PM",ig:["mayabaydubai"]},
+  {n:193,cat:"Promotions",venue:"bebeach Dubai",loc:"Jumeirah",deal:"Special Ramadan offer — contact @bebeach directly for details and reservations.",saving:"Varies",period:"Ramadan 2026",ig:["bebeach"]},
+  {n:194,cat:"Platforms & Apps",venue:"The Keg Room — Abu Dhabi",loc:"Abu Dhabi",deal:"Bar Ninja card discount available. Free Bar Ninja loyalty card redeemable here.",saving:"Bar Ninja %",period:"Year-round",ig:["thekegroomabudhabi"]},
+  {n:195,cat:"Platforms & Apps",venue:"Bar Ninja Card (Bar Ninjas INT)",loc:"Multiple Venues",deal:"Free digital loyalty card offering 20% off at all participating venues across Dubai & UAE. Powered by Bar Ninjas INT, sponsored by Campari.",saving:"20% off",period:"Valid to Sep 2026",ig:["bar_ninjas"]},
+  /* ─── STAYCATION DEALS FROM PDF (March 2026) ─── */
+  {n:196,cat:"Hotel Deals",venue:"Atlantis The Royal",loc:"Palm Jumeirah, Dubai",deal:"Direct Book 20% off — AED 2,400/night. Access to Aquaventure World & Lost World Aquarium included. Book direct only.",saving:"20% (AED 2,400)",period:"Until Mar 31, 2026",ig:["atlantis_royal"]},
+  {n:197,cat:"Hotel Deals",venue:"Bvlgari Resort Dubai",loc:"Jumeira Bay Island, Dubai",deal:"Luxury Staycation Package — 49% off at AED 1,785/night. Includes 25% off dining, spa treatments or complimentary meals (Deluxe+), children's activities. 2-night minimum.",saving:"49% (AED 1,785)",period:"Until Mar 28, 2026",ig:["bvlgari_dubai"]},
+  {n:198,cat:"Hotel Deals",venue:"Jumeirah Burj Al Arab — Staycation",loc:"Umm Suqeim, Dubai",deal:"3-Night Staycation — 30% off at AED 5,600/night. Spa treatments, dining discounts & family programming included. Emirates/GCC ID required.",saving:"30% (AED 5,600)",period:"Year-round",ig:["jumeirahburalab"]},
+  {n:199,cat:"Hotel Deals",venue:"Jumeirah Al Qasr — Staycation",loc:"Madinat Jumeirah, Dubai",deal:"3-Night Staycation — 30% off at AED 2,240/night. Spa, dining discounts, beach & pool access, family activities. Emirates/GCC ID required.",saving:"30% (AED 2,240)",period:"Year-round",ig:["jumeirah_alqasr"]},
+  {n:200,cat:"Hotel Deals",venue:"One&Only The Palm — Resident Rate",loc:"Al Sufouh, Dubai",deal:"GCC Resident Staycation — 39% off at AED 1,520/night. AED 500 resort credit, waterpark access, daily breakfast & early check-in. GCC ID required.",saving:"39% (AED 1,520)",period:"Until May 31, 2026",ig:["oneandonlythepalm"]},
+  {n:201,cat:"Hotel Deals",venue:"Banyan Tree Dubai",loc:"Bluewaters Island, Dubai",deal:"UAE & GCC Staycation — 32% off at AED 1,500/night. AED 300 spa credit, 25% off best rate, beach access. UAE/GCC ID required.",saving:"32% (AED 1,500)",period:"Year-round",ig:["banyantreedubaibluewaters"]},
+  {n:202,cat:"Hotel Deals",venue:"Anantara Dubai Palm Resort — Resident",loc:"Palm Jumeirah, Dubai",deal:"UAE Resident Exclusive — 29% off at AED 1,980/night. 18% off + extra 10% for Minor DISCOVERY members. Emirates ID required.",saving:"29% (AED 1,980)",period:"Year-round",ig:["anantara_dubai_palm"]},
+  {n:203,cat:"Hotel Deals",venue:"The Ritz-Carlton Dubai JBR — Resident",loc:"JBR, Dubai",deal:"Resident Staycation (Code E400) — 33% off at AED 1,200/night. 25% off rooms, 20% off F&B, 30% off spa, kids under 14 dine free. Emirates/GCC ID.",saving:"33% (AED 1,200)",period:"Year-round",ig:["ritzcarlton_dubai"]},
+  {n:204,cat:"Hotel Deals",venue:"FIVE LUXE JBR — Stay & Dine",loc:"JBR, Dubai",deal:"Stay & Dine Fully Redeemable — AED 399/person. Entire room charge redeemable on food, drinks & spa throughout your stay. Open to all.",saving:"56% (AED 399pp)",period:"Until Mar 31, 2026",ig:["fiveluxejbr"]},
+  {n:205,cat:"Hotel Deals",venue:"Andaz Dubai The Palm — Dine & Stay",loc:"Palm Jumeirah, Dubai",deal:"Dine & Stay Complimentary — spend AED 450/adult on dining/spa/pool and receive a complimentary 1-night stay with breakfast. Open to all.",saving:"72% off (AED 450 spend)",period:"Until Mar 31, 2026",ig:["andazdubaithepalm"]},
+  {n:206,cat:"Hotel Deals",venue:"Jumeirah Beach Hotel — UAE Resident",loc:"Umm Suqeim, Dubai",deal:"UAE Resident 30% off — AED 1,067/night. Kids under 11 free stay & eat, Wild Wadi Waterpark access, kids' club, 15% off beverages. Emirates/GCC ID.",saving:"30% (AED 1,067)",period:"Year-round",ig:["jumeirahbeachhotel"]},
+  {n:207,cat:"Hotel Deals",venue:"Jumeirah Zabeel Saray — Emirates ID",loc:"Palm Jumeirah, Dubai",deal:"Emirates ID Exclusive — 15% off at AED 1,700/night. Free breakfast, Talise Ottoman Spa access, private cinema & Sinbad kids club included.",saving:"15% (AED 1,700)",period:"Until Dec 31, 2026",ig:["jumeirahzabeelsaray"]},
+  {n:208,cat:"Hotel Deals",venue:"Jumeirah Marsa Al Arab — Resident",loc:"Umm Suqeim, Dubai",deal:"UAE Resident 3-Night Stay — 30% off at AED 3,850/night. Family programming, spa treatments, beach & pool access. Emirates/GCC ID required.",saving:"30% (AED 3,850)",period:"Year-round",ig:["jumeirahmarsa_alarab"]},
+  {n:209,cat:"Hotel Deals",venue:"H Hotel Dubai — Ramadan Staycation",loc:"Sheikh Zayed Rd, Dubai",deal:"Ramadan Staycation Package — 33% off at AED 600/night. Rotating iftar buffet, in-room suhoor & AED 200 spa credit included. Open to all.",saving:"33% (AED 600)",period:"Until Mar 17, 2026",ig:["hhoteldubai"]},
+  {n:210,cat:"Hotel Deals",venue:"LEGOLAND Dubai Hotel — Stay & Play",loc:"Dubai Parks & Resorts",deal:"Stay & Play Package — 40% off at AED 626/night. LEGO-themed rooms, theme park + water park access for the whole family, breakfast included.",saving:"40% (AED 626)",period:"Year-round",ig:["legolanddubai"]},
+  {n:211,cat:"Hotel Deals",venue:"JA Hatta Fort Hotel — Eid Package",loc:"Hatta, Dubai",deal:"Eid Al Fitr Family Package — AED 650/night. Family activities 12:30–4pm, BBQ buffet, Emirati cuisine, mountain views. Eid dates only.",saving:"28% (AED 650)",period:"Eid, until Mar 22",ig:["jaresorts"]},
+  {n:212,cat:"Hotel Deals",venue:"Radisson Blu Dubai Waterfront",loc:"Dubai Waterfront",deal:"90%+ Value Back Staycation — AED 299/person. Room rate fully redeemable on food & drinks at on-site restaurants. Open to all.",saving:"40% (AED 299pp)",period:"Year-round",ig:["radissonblumiradubai"]},
+  {n:213,cat:"Hotel Deals",venue:"Radisson Blu Deira Creek — All-Inclusive",loc:"Deira Creek, Dubai",deal:"All-Inclusive Staycation — AED 349/person. Unlimited beverages, gourmet breakfast, lunch & dinner, plus historic Dubai Creek views.",saving:"46% (AED 349pp)",period:"Year-round",ig:["radissonbludeiracreek"]},
+  {n:214,cat:"Hotel Deals",venue:"Radisson Blu Dubai Media City",loc:"Media City, Dubai",deal:"Redeemable Stay Package — AED 400/night. Booking amount fully redeemable at Certo Italian restaurant or ICON Lounge.",saving:"27% (AED 400)",period:"Year-round",ig:["radissonblumediacitydubai"]},
+  {n:215,cat:"Hotel Deals",venue:"Park Inn by Radisson Motor City — Golf",loc:"Motor City, Dubai",deal:"Golf Staycation Package — AED 450/night. Early check-in, free breakfast, welcome drink, Els Golf Club tee time, rooftop pool/gym & free parking.",saving:"25% (AED 450)",period:"Year-round",ig:["parkinndubaimotorcity"]},
+  {n:216,cat:"Hotel Deals",venue:"Radisson RED Silicon Oasis — Pet Stay",loc:"Silicon Oasis, Dubai",deal:"Pet-Friendly Staycation — AED 309/person. 2 guests + 1 pet, 1-hour drinks package, dog bed & bowl, dog ice cream & pawsecco included.",saving:"38% (AED 309pp)",period:"Year-round",ig:["radissonreddubai"]},
+  {n:217,cat:"Hotel Deals",venue:"Premier Inn Dubai — Direct Book",loc:"Multiple Locations, Dubai",deal:"Direct Book 20% off — from AED 280/night. 25% off restaurants & bars, free early check-in (from 11am), late check-out until 3pm.",saving:"20% (from AED 280)",period:"Year-round",ig:["premierinnme"]},
+  {n:218,cat:"Hotel Deals",venue:"Jumeirah Saadiyat Island — Staycation",loc:"Saadiyat Island, Abu Dhabi",deal:"3-Night Staycation — 35% off at AED 1,420/night. Flexible check-in/out, family & spa programming. UAE resident preferred.",saving:"35% (AED 1,420)",period:"Year-round",ig:["jumeirahsaadiyat"]},
+  {n:219,cat:"Hotel Deals",venue:"Fairmont Bab Al Bahr — UAE Resident",loc:"Khor Al Maqta, Abu Dhabi",deal:"UAE Resident 36% off — AED 700/night. Complimentary breakfast for two, Ramadan dining packages. Emirates ID required.",saving:"36% (AED 700)",period:"Until Mar 17, 2026",ig:["fairmont_babal_bahr"]},
+  {n:220,cat:"Hotel Deals",venue:"Rosewood Abu Dhabi — Advance Rate",loc:"Al Maryah Island, Abu Dhabi",deal:"Advance Purchase 45% off — AED 772/night. Complimentary sauna & steam room at Rosewood Spa + high-speed Wi-Fi. Non-refundable.",saving:"45% (AED 772)",period:"Year-round",ig:["rosewoodabudhabi"]},
+  {n:221,cat:"Hotel Deals",venue:"Park Hyatt Abu Dhabi — Resident Rate",loc:"Saadiyat Island, Abu Dhabi",deal:"Resident Beachside Offer — 38% off at AED 1,000/night. Private plunge pool villas available, direct beach access & spa. UAE residents preferred.",saving:"38% (AED 1,000)",period:"Year-round",ig:["parkhyattabudhabi"]},
+  {n:222,cat:"Hotel Deals",venue:"Club Prive by Rixos Saadiyat",loc:"Saadiyat Island, Abu Dhabi",deal:"Ultra-Luxury Pool Villa Package — 41% off at AED 7,100/night. Direct pool access rooms, 4-bed villa with private pool, 5 restaurants, 6 bars.",saving:"41% (AED 7,100)",period:"Year-round",ig:["clubprivebyrxossaadiyat"]},
+  {n:223,cat:"Hotel Deals",venue:"Radisson Blu Abu Dhabi Corniche",loc:"Corniche, Abu Dhabi",deal:"Weekend Family Staycation — 30% off at AED 490/night. 30% off food & drinks, free upgrade to sea view room on weekends. Open to all.",saving:"30% (AED 490)",period:"Year-round",ig:["radissonbluabudhabi"]},
+  {n:224,cat:"Hotel Deals",venue:"Waldorf Astoria Ras Al Khaimah — Eid",loc:"Al Marjan Island, RAK",deal:"Eid Al Fitr Package — 63% off at AED 1,200 per room for 2 nights (2 adults). Full resort access, beach access & gym. Open to all.",saving:"63% (AED 1,200/2nts)",period:"Until Mar 22, 2026",ig:["waldorfastoriaRAK"]},
+  {n:225,cat:"Hotel Deals",venue:"Sofitel Al Hamra Beach Resort — Eid",loc:"Al Hamra, Ras Al Khaimah",deal:"Eid Al Fitr Package — 50% off at AED 1,400 per room for 2 nights. Beach access, pool, gym & WiFi included. Open to all.",saving:"50% (AED 1,400/2nts)",period:"Until Mar 22, 2026",ig:["sofitelalhamra"]},
+  {n:226,cat:"Hotel Deals",venue:"Anantara Mina Al Arab RAK — Resident",loc:"Mina Al Arab, Ras Al Khaimah",deal:"UAE & GCC Residents 18% off — AED 1,230/night. Extra 10% for Minor DISCOVERY members, overwater resort experience. Emirates/GCC ID.",saving:"18% (AED 1,230)",period:"Year-round",ig:["anantaraminaalarab"]},
+  {n:227,cat:"Hotel Deals",venue:"Ritz-Carlton Ras Al Khaimah — Eid",loc:"Al Hamra, Ras Al Khaimah",deal:"Eid Al Fitr Package — 47% off at AED 1,600 per room for 2 nights. Full beach resort access & gym. Eid dates only. Open to all.",saving:"47% (AED 1,600/2nts)",period:"Until Mar 22, 2026",ig:["ritzcarlitonrak"]},
+  {n:228,cat:"Hotel Deals",venue:"Al Hamra Residence — UAE Resident",loc:"Al Hamra Beach, Ras Al Khaimah",deal:"UAE Resident 30% off (Code SB RAK) — AED 490/night. Beach access, kids' club, pool & co-working space. Emirates ID required. Not valid Eid.",saving:"30% (AED 490)",period:"Until Mar 31, 2026",ig:["alhamrarakhotels"]},
+  {n:229,cat:"Hotel Deals",venue:"Al Hamra Village Hotel — UAE Resident",loc:"Al Hamra, Ras Al Khaimah",deal:"UAE Resident 30% off (Code SB RAK) — AED 420/night. Pool access, beach access via Al Hamra Residence, quiet & relaxing setting. Not valid Eid.",saving:"30% (AED 420)",period:"Until Mar 31, 2026",ig:["alhamravillagehotel"]},
+  {n:230,cat:"Hotel Deals",venue:"The Chedi Al Bait Sharjah",loc:"Heritage Area, Sharjah",deal:"UAE & GCC Resident Offer — 30% off at AED 704/night. Up to 20% off BAR, AED 150 spa credit, free shuttle to Al Heera Beach. UAE/GCC ID required.",saving:"30% (AED 704)",period:"Year-round",ig:["thechedi_albait"]},
+  /* ─── ENTERTAINMENT & ATTRACTIONS ─── */
+  {n:231,cat:"Leisure",venue:"Aquaventure Waterpark — Atlantis The Palm",loc:"Palm Jumeirah, Dubai",deal:"Resident Day Pass from AED 145 (vs AED 399 full price). Annual Platinum Pass AED 1,299. Complimentary access included with qualifying Atlantis hotel stays.",saving:"From AED 145",period:"Year-round",ig:["aquaventuredubai"]},
+  {n:232,cat:"Leisure",venue:"Global Village Dubai",loc:"Sheikh Zayed Rd, Dubai",deal:"Entry from AED 20/person. Vast multicultural festival park with 90+ countries, live shows, rides & food. Use Entertainer app for 2-for-1 select rides & experiences.",saving:"From AED 20",period:"Until Apr 27, 2026",ig:["globalvillage_uae"]},
+  {n:233,cat:"Leisure",venue:"Dubai Miracle Garden",loc:"Al Barsha South, Dubai",deal:"Entry AED 55/adult (AED 40 child). 150 million blooming flowers in record-breaking floral displays. Discounts via Smiles & Entertainer apps.",saving:"AED 55 (adult)",period:"Until Apr 30, 2026",ig:["dubaimiraclegarden"]},
+  {n:234,cat:"Leisure",venue:"Dubai Frame",loc:"Zabeel Park, Dubai",deal:"AED 50/person with resident promo code (vs AED 63 standard). 150m tall picture frame with sky bridge & immersive museum. Book online for best rates.",saving:"AED 50 (promo)",period:"Year-round",ig:["dubaiframe"]},
+  {n:235,cat:"Leisure",venue:"Ski Dubai — Snow Pass",loc:"Mall of the Emirates",deal:"Slope Pass from AED 185 (2hrs) or AED 235 (all-day). Snow Park access from AED 135. Resident discounts available. Check seasonalpackages for families.",saving:"From AED 135",period:"Year-round",ig:["skidubai"]},
+  {n:236,cat:"Leisure",venue:"IMG Worlds of Adventure",loc:"City of Arabia, Dubai",deal:"1-day ticket from AED 325 (online). Marvel, Cartoon Network, Lost Valley & Novo Cinema zones. 2-for-1 deals via Entertainer app.",saving:"From AED 325",period:"Year-round",ig:["imgworlds"]},
+  {n:237,cat:"Leisure",venue:"AYA Universe",loc:"WAFI City, Dubai",deal:"Immersive art & technology experience — ticket from AED 95/person (AED 75 off-peak). Discount codes via @ayauniverse Instagram story highlights. Unique date-night venue.",saving:"From AED 75",period:"Year-round",ig:["aya.universe"]},
+  {n:238,cat:"Leisure",venue:"The Green Planet Dubai",loc:"City Walk, Dubai",deal:"Adult ticket AED 94 with resident/online discount (vs AED 120 at door). Indoor tropical rainforest & wildlife. Kids AED 79. Combo tickets available with other Meraas venues.",saving:"AED 94 (online)",period:"Year-round",ig:["thegreenplanetdubai"]},
+  {n:239,cat:"Leisure",venue:"Dubai Aquarium & Underwater Zoo",loc:"Dubai Mall",deal:"Aquarium Tunnel AED 60 (free with Dubai Mall walk-through for browsing only). Glass-Bottom Boat + Zoo combo from AED 139. Regular promotions via Dubai Mall app.",saving:"From AED 60",period:"Year-round",ig:["dubaiaquarium"]},
+  {n:240,cat:"Leisure",venue:"At the Top — Burj Khalifa",loc:"Downtown Dubai",deal:"Level 124/125 from AED 149 (off-peak, booked online in advance). Level 148 from AED 379. Non-prime slots significantly cheaper — book 30+ days ahead for best rates.",saving:"From AED 149",period:"Year-round",ig:["burjkhalifa"]},
+  {n:241,cat:"Leisure",venue:"The View at The Palm",loc:"Palm Tower, Palm Jumeirah",deal:"General admission from AED 75 (adult). 52nd floor observation deck with 360° Palm views. Combo tickets with Aquaventure available. Resident deals often on Cobone.",saving:"From AED 75",period:"Year-round",ig:["theviewatthepalm"]},
+  {n:242,cat:"Leisure",venue:"Kidzania Dubai",loc:"Dubai Mall",deal:"Children's ticket from AED 120 (off-peak, booked online). Adult AED 70. Corporate packages & family bundles available. Discounts via Entertainer & schools programmes.",saving:"From AED 120 (child)",period:"Year-round",ig:["kidzaniadubai"]},
+  {n:243,cat:"Leisure",venue:"Dubai Safari Park",loc:"Al Warqa, Dubai",deal:"Adults AED 50, children AED 30 (under 3 free). Authentic safari experience with 3,000+ animals. Resident rate applies — bring Emirates ID. Evenings often quieter.",saving:"AED 50 (adult)",period:"Year-round",ig:["dubaisafaripark"]},
+  {n:244,cat:"Leisure",venue:"Dubai Parks & Resorts — Multi-Park Pass",loc:"Jebel Ali, Dubai",deal:"All-in-One 1-day pass from AED 295 (covers Motiongate, Bollywood Parks & Legoland Dubai). Resident annual passes available from AED 1,295. Best value for families.",saving:"From AED 295",period:"Year-round",ig:["dubaiparks"]},
+  {n:245,cat:"Leisure",venue:"La Perle by Dragone",loc:"Al Habtoor City, Dubai",deal:"Category C seats from AED 200, Category A from AED 395 (vs AED 450 door price). World-class acrobatics & water show. Group discounts available. Book direct for savings.",saving:"From AED 200",period:"Year-round",ig:["laperledubai"]},
+  {n:246,cat:"Leisure",venue:"Madame Tussauds Dubai",loc:"Bluewaters Island, Dubai",deal:"Online ticket from AED 99 (vs AED 149 at door). Celebrity wax figures, Marvel Superheroes & Sports zones. Combo with Ain Dubai from AED 159. Book on their website.",saving:"AED 99 (online)",period:"Year-round",ig:["madametussaudsdubai"]},
+  {n:247,cat:"Leisure",venue:"Ain Dubai — Observation Wheel",loc:"Bluewaters Island, Dubai",deal:"⚠️ Temporarily closed (March 2026) — check ain.ae for reopening. World's largest observation wheel. Standard cabin from AED 145 when open. Combo packages with Madame Tussauds available.",saving:"From AED 145",period:"Year-round",ig:["aindubai"]},
+  {n:248,cat:"Leisure",venue:"Ferrari World Abu Dhabi",loc:"Yas Island, Abu Dhabi",deal:"1-day ticket from AED 255 online (vs AED 319 gate). Annual pass AED 395. World's fastest roller coaster Formula Rossa. UAE resident discount available.",saving:"From AED 255",period:"Year-round",ig:["ferrariworldabudhabi"]},
+  {n:249,cat:"Leisure",venue:"Yas Waterworld Abu Dhabi",loc:"Yas Island, Abu Dhabi",deal:"1-day ticket from AED 265 online (vs AED 325 gate). Over 45 rides & attractions. UAE resident annual Yas pass covers all 4 Yas Island parks from AED 945.",saving:"From AED 265",period:"Year-round",ig:["yaswaterworld"]},
+  {n:250,cat:"Leisure",venue:"Warner Bros. World Abu Dhabi",loc:"Yas Island, Abu Dhabi",deal:"1-day ticket from AED 295 online. DC Super Heroes, Cartoon Network & classic WB zones. Buy Yas Island multi-park pass for best value across all Yas attractions.",saving:"From AED 295",period:"Year-round",ig:["wbworldabudhabi"]},
+  /* ─── ITALIAN RESTAURANTS ─── */
+  {n:251,cat:"Italian",venue:"Luigia Dubai",loc:"The Pointe & DIFC, Dubai",deal:"Authentic Neapolitan pizza & pasta. Dine-in deals via Smiles app & Entertainer. Happy hour cocktails from AED 39. Online ordering with regular promo codes on luigia.ae.",saving:"From AED 39 HH",period:"Daily Happy Hour",ig:["luigiadubai"]},
+  {n:253,cat:"Italian",venue:"Roberto's DIFC",loc:"DIFC, Dubai",deal:"Fine Italian dining with business lunch set menu. Use code DIFC20 for 20% off online orders. Regular promotions via their newsletter and Zomato listing.",saving:"20% (code DIFC20)",period:"Mon–Fri 12–3pm",ig:["robertosdubai"]},
+  {n:254,cat:"Italian",venue:"Bussola — The Westin Dubai Mina Seyahi",loc:"Dubai Marina",deal:"Award-winning Italian beachfront restaurant. Sunday pasta brunch from AED 199pp including free-flow. Weekday set lunch from AED 95pp (2 courses + soft drink).",saving:"From AED 95pp",period:"Weekdays / Sundays",ig:["bussoladubai"]},
+  {n:255,cat:"Italian",venue:"Cipriani Dubai",loc:"One Za'abeel, Dubai",deal:"Iconic Italian institution. Business lunch from AED 175pp (3 courses, soft drink included). Aperitivo hour Mon–Fri 5–7pm with select cocktails & bar bites.",saving:"From AED 175pp",period:"Mon–Fri 12–3pm",ig:["ciprianiworld"]},
+  {n:256,cat:"Italian",venue:"Scalini DIFC",loc:"DIFC, Dubai",deal:"Classic Italian trattoria. Business lunch set menu from AED 120pp (pasta + main). Sister restaurant to London's Scalini. Evening à la carte with Zomato Gold discounts.",saving:"From AED 120pp",period:"Mon–Fri 12–3pm",ig:["scalinidubai"]},
+  /* ─── JAPANESE RESTAURANTS ─── */
+  {n:257,cat:"Japanese",venue:"Katsuya by Starck — SLS Dubai",loc:"Business Bay, Dubai",deal:"Philippe Starck-designed Japanese fusion. Happy hour Mon–Fri 5–8pm: 50% off select cocktails & edamame. Set lunch from AED 115pp. Sushi bar seating available.",saving:"50% HH / AED 115pp",period:"Mon–Fri Happy Hour",ig:["katsuyasls"]},
+  {n:258,cat:"Japanese",venue:"Netsu — Mandarin Oriental Jumeira",loc:"Jumeirah, Dubai",deal:"Robata grill & sashimi bar. Lunch set from AED 145pp (2 courses). Wednesday ladies night: complimentary glasses of rosé. Premium omakase available evenings.",saving:"From AED 145pp",period:"Mon–Fri 12–3pm",ig:["mandorientaldubai"]},
+  {n:259,cat:"Japanese",venue:"Kōkō — Address Beach Resort",loc:"JBR, Dubai",deal:"Japanese coastal dining with Bluewaters views. Sunset happy hour daily 5–8pm: 50% off cocktails & select sushi rolls. Business lunch set menu AED 125pp.",saving:"50% HH / AED 125pp",period:"Daily 5–8 PM",ig:["kokoaddressdubai"]},
+  {n:261,cat:"Japanese",venue:"MIMI Kakushi — Four Seasons DIFC",loc:"DIFC, Dubai",deal:"Nikkei cuisine (Japanese-Peruvian fusion). Business lunch from AED 160pp. Thursday & Friday ladies night with complimentary cocktails. Omakase experience upon request.",saving:"From AED 160pp",period:"Mon–Fri 12–3pm",ig:["mimi_kakushi"]},
+  /* ─── PERUVIAN & LATIN AMERICAN ─── */
+  {n:262,cat:"Latin",venue:"COYA Abu Dhabi",loc:"Four Seasons Abu Dhabi",deal:"Peruvian restaurant with business lunch set menu AED 140 for 3 courses — one of the best value lunches in Abu Dhabi. Weekend brunch also available from AED 295pp.",saving:"AED 140pp (lunch)",period:"Mon–Fri 12–3pm",ig:["coyaabudhabi"]},
+  {n:263,cat:"Latin",venue:"Fogo de Chão — Full Churrasco Experience",loc:"DIFC, Dubai",deal:"Authentic Brazilian churrascaria. Full churrasco dining experience from AED 245pp (unlimited grilled meats + salad bar). Happy hour at Bar Fogo daily 5–8pm.",saving:"From AED 245pp",period:"Year-round",ig:["fogodechaodubai"]},
+  {n:264,cat:"Latin",venue:"La Parrilla — Jumeirah Beach Hotel",loc:"Umm Suqeim, Dubai",deal:"Latin American & Argentinian grill. Friday night BBQ brunch from AED 250pp (soft) or AED 390pp (house beverages). Ladies dine free on Wednesdays.",saving:"Ladies dine free Wed",period:"Fri Brunch / Wed Ladies",ig:["jumeirahbeachhotel"]},
+  {n:265,cat:"Latin",venue:"Gaucho DIFC — Latin Steak",loc:"DIFC, Dubai",deal:"Argentine steakhouse institution. Business lunch from AED 175pp. 50% off à la carte for residents on select weeknights. Wine flights available from AED 95.",saving:"From AED 175pp",period:"Mon–Fri 12–3pm",ig:["gauchorestaurants"]},
+  /* ─── KOREAN RESTAURANTS ─── */
+  {n:267,cat:"Korean",venue:"Seoul Garden Korean BBQ",loc:"Al Karama, Dubai",deal:"Popular tabletop Korean BBQ. Unlimited BBQ set from AED 79pp (lunch) or AED 95pp (dinner). Wide banchan selection. Group-friendly with private room options.",saving:"From AED 79pp (unlimited)",period:"Daily",ig:["seoulgardenae"]},
+  {n:268,cat:"Korean",venue:"Korea Garden Restaurant",loc:"Al Karama, Dubai",deal:"Authentic, affordable Korean dining — one of Dubai's oldest Korean restaurants. Set meals from AED 35. Bibimbap, sundubu jjigae, Korean fried chicken and full BBQ menu.",saving:"From AED 35",period:"Daily",ig:["koreagardendubai"]},
+  {n:269,cat:"Korean",venue:"Mr. Kim's",loc:"DIFC, Dubai",deal:"Modern Korean restaurant & bar in DIFC. Lunch specials from AED 75pp. Cocktail happy hour Mon–Fri 4–7pm: 50% off select drinks. Korean fried chicken & tteokbokki bar.",saving:"From AED 75pp / 50% HH",period:"Daily Happy Hour",ig:["mrkimsdifc"]},
+  {n:270,cat:"Korean",venue:"Hanbok — Abu Dhabi",loc:"Al Maryah Island, Abu Dhabi",deal:"Modern Korean fine dining at The Galleria, Abu Dhabi. Signature Korean dishes with contemporary presentation. Set lunch from AED 95pp. Industry deals posted via IG.",saving:"From AED 95pp",period:"Mon–Fri 12–3pm",ig:["hanbok_abudhabi"]},
+  /* ─── ALL DAY DINING ─── */
+  {n:271,cat:"All Day Dining",venue:"Jones the Grocer",loc:"Multiple Locations, Dubai",deal:"All-you-can-eat breakfast buffet AED 69pp (8–11:30am weekdays). All-day café menu from 8am–10pm. Cheese room, deli counter & artisan products. Many locations across Dubai.",saving:"AED 69pp (buffet)",period:"Daily from 8 AM",ig:["jonesthegrocer"]},
+  {n:272,cat:"All Day Dining",venue:"Tom & Serg",loc:"Al Quoz / Business Bay, Dubai",deal:"Melbourne-style all-day breakfast & lunch until 4pm. Eggs any way from AED 55, pancake stacks, avocado toast. No reservations — walk-in favourite. Weekday queues shorter.",saving:"From AED 55",period:"Daily 8 AM – 4 PM",ig:["tomandserg"]},
+  {n:273,cat:"All Day Dining",venue:"Baker & Spice",loc:"Souk Al Bahar, Marina & more",deal:"Artisan market café with all-day dining — breakfast plates from AED 48. Seasonal salads, soups & mains. Free pastry with purchase of hot drink on weekday mornings.",saving:"From AED 48",period:"Daily 8 AM – 10 PM",ig:["bakerandspiceme"]},
+  {n:274,cat:"All Day Dining",venue:"Common Grounds",loc:"DIFC, Dubai",deal:"Breakfast Club: AED 69pp (Sun–Wed 8am–12pm) — includes full breakfast + juice or smoothie. Specialty coffee, all-day brunch menu & co-working-friendly vibe throughout the day.",saving:"AED 69pp (Breakfast Club)",period:"Sun–Wed, 8 AM–12 PM",ig:["commongroundsdifc"]},
+  {n:275,cat:"All Day Dining",venue:"Wild & The Moon",loc:"DIFC, Downtown & Alserkal, Dubai",deal:"100% plant-based all-day café. Smoothie bowls from AED 48, grain bowls from AED 65, cold-pressed juices from AED 32. Monthly wellness deals via newsletter & IG.",saving:"From AED 32",period:"Daily 8 AM – 10 PM",ig:["wildandthemoon"]},
+  {n:276,cat:"All Day Dining",venue:"The Sum of Us",loc:"Al Serkal Avenue / Business Bay",deal:"Melbourne-inspired all-day café. Full breakfast menu from AED 50, lunch specials from AED 65. Famous for their vanilla soft-serve. All-day menu until 6pm on weekdays.",saving:"From AED 50",period:"Daily 8 AM – 6 PM",ig:["_thesumofus_"]},
+  /* ─── ADDITIONAL BEACH & POOL CLUBS ─── */
+  {n:277,cat:"Leisure",venue:"Aura Skypool",loc:"Palm Tower, Palm Jumeirah",deal:"Infinity sky pool at 200m altitude. Morning session AED 250 / Afternoon AED 300 / Evening AED 225 / Full day AED 875. UAE residents 50% off with code UAE50. Booking required.",saving:"UAE res 50% off",period:"Daily (sessions)",ig:["auraskypool"]},
+  {n:278,cat:"Leisure",venue:"Azure Beach — Rixos Premium JBR",loc:"JBR, Dubai",deal:"Beachfront club at Rixos Premium JBR. Day pass: AED 100 fully redeemable weekdays, AED 200–300 (AED 100–150 redeemable) weekends. Tue/Wed ladies AED 150. Saturday Vogue Pool Party 9pm–1am.",saving:"From AED 100",period:"Daily / Sat Events",ig:["azurebeachdubai"]},
+  {n:279,cat:"Leisure",venue:"WHITE Beach — Atlantis The Palm",loc:"Palm Jumeirah, Dubai",deal:"Iconic beach club at Atlantis The Palm. Day pass AED 300pp (includes sun lounger + AED 100–150 F&B credit). Open Mon–Sat 12–5:30pm. Closed July–August. Booking essential.",saving:"AED 300 (incl. F&B)",period:"Mon–Sat, 12–5:30 PM",ig:["whitebeachdubai"]},
+  {n:280,cat:"Leisure",venue:"Drift Beach Dubai",loc:"One&Only Royal Mirage, Dubai",deal:"Boutique beach club. Ladies Who Drift: Tue & Thu entry AED 99 with complimentary drinks. Weekday pass AED 150–200, weekend AED 200–250. Cabana for 2 Mon–Thu AED 600 incl. house wine.",saving:"Ladies AED 99 Tue/Thu",period:"Daily",ig:["driftbeachdubai"]},
+  {n:281,cat:"Leisure",venue:"Summersalt Beach Club",loc:"Jumeirah Al Naseem, Dubai",deal:"Madinat Jumeirah's beachfront club. Weekday pass AED 250 (AED 200 F&B credit). Weekend AED 300 (AED 200 credit). Monday–Tuesday for 2 guests only AED 700 total.",saving:"From AED 250",period:"Daily",ig:["summersaltdubai"]},
+  {n:282,cat:"Leisure",venue:"Soluna Beach Club",loc:"Palm Jumeirah, Dubai",deal:"Relaxed Palm beachside club. Weekday AED 250 (AED 200 F&B credit), Weekend AED 300. Premium package AED 400 (AED 300 F&B). Family package AED 1,000 for 3 (AED 700 F&B).",saving:"From AED 250",period:"Daily",ig:["solunabeachdubai"]},
+  {n:283,cat:"Leisure",venue:"Barasti Beach Bar",loc:"Le Méridien Mina Seyahi, Dubai Marina",deal:"Dubai's legendary beach bar. Sea Me Package Mon–Fri 10am–4pm AED 175: beach/pool + sunbed + bottomless tiki cocktails + lunch platter. Happy hour daily 12–8pm drinks from AED 20.",saving:"AED 175 Sea Me pkg",period:"Mon–Fri 10 AM–4 PM",ig:["barastibeach"]},
+  {n:284,cat:"Leisure",venue:"The Ritz-Carlton Beach Club",loc:"JBR, Dubai",deal:"Luxury JBR beachfront. Weekday pass AED 200pp (AED 150 F&B credit). Weekend AED 300pp (AED 200 credit). Children under 12 free. Private cabana upgrades available.",saving:"From AED 200",period:"Daily",ig:["ritzcarltondubai"]},
+  {n:285,cat:"Leisure",venue:"Soul Beach Dubai",loc:"Sheikh Zayed Road, Dubai",deal:"Immersive beach experience with nightly sunset rituals, DJ performances & live acts. Events-driven programming — check IG for upcoming dates. Bottle packages & group deals available.",saving:"Events-based",period:"Select dates",ig:["soulbeachdxb"]},
+  {n:286,cat:"Leisure",venue:"Rixos Bab Al Bahr — Day Pass",loc:"Al Marjan Island, Ras Al Khaimah",deal:"All-inclusive beach resort day pass AED 400pp / AED 600 couple / AED 700 family. 10am–6pm: unlimited access to 11 restaurants & bars, beach, pools, sports & kids club.",saving:"AED 400pp all-incl.",period:"Daily 10 AM–6 PM",ig:["rixosbabalbahr"]},
+  {n:287,cat:"Leisure",venue:"Palm West Beach",loc:"Palm Jumeirah, Dubai",deal:"Dubai's only 1.6km public beach on the Palm — 100% FREE entry. Open 8am–midnight. Free parking 3 hours. Watersports, F&B kiosks & sunset views. Great value family beach day.",saving:"FREE entry",period:"Daily 8 AM–midnight",ig:["palmwestbeach"]},
+
+
+
+
+
+];
+
+function igHtml(keys, venue) {
+  let rec = null;
+  for (const k of keys) { if (IG[k]) { rec = IG[k]; break; } }
+  if (!rec) {
+    for (const k of Object.keys(IG)) {
+      if (venue.toLowerCase().includes(k.toLowerCase())) { rec = IG[k]; break; }
+    }
+  }
+  if (rec) {
+    return `<a class="ig-btn" href="${rec.u}" target="_blank" rel="noopener noreferrer">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      ${rec.h}</a>`;
+  }
+  return `<span class="no-ig">—</span>`;
+}
+
+
+function refHtml(n) {
+  const url = REF[n];
+  if (url) {
+    return `<a class="ref-btn" href="${url}" target="_blank" rel="noopener noreferrer">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Visit</a>`;
+  }
+  return `<span class="no-ref">—</span>`;
+}
+
+function savingHtml(s) {
+  const isFree = /free|FREE/i.test(s);
+  return `<span class="saving${isFree?' free':''}">${s}</span>`;
+}
+
+let filter = "", search = "", sortCol = "n", sortAsc = true;
+
+
+// ── Period expiry classifier (today = 23 Mar 2026) ──────
+const _TODAY = new Date(2026, 2, 23); // month is 0-indexed
+const MONTH_MAP = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+function _parsePeriodDate(p) {
+  // "Until Apr 27, 2026" or "Until 15 Sep 2026"
+  let m = p.match(/Until\s+(\w+)\s+(\d{1,2}),?\s*(\d{4})/i);
+  if (m) {
+    const mo = MONTH_MAP[m[1].slice(0,3).toLowerCase()];
+    if (mo !== undefined) return new Date(+m[3], mo, +m[2]);
+  }
+  m = p.match(/Until\s+(\d{1,2})\s+(\w+)\s*(\d{4})?/i);
+  if (m) {
+    const mo = MONTH_MAP[m[2].slice(0,3).toLowerCase()];
+    const yr = m[3] ? +m[3] : 2026;
+    if (mo !== undefined) return new Date(yr, mo, +m[1]);
+  }
+  return null;
+}
+function periodClass(p) {
+  if (!p) return '';
+  // Known-expired events
+  if (/Gulfood period/i.test(p)) return 'period-expired';
+  if (/Eid.*Mar\s*22/i.test(p)) return 'period-expired';
+  // Ramadan 2026 ends ~29-30 March → urgent
+  if (/Ramadan 2026/i.test(p)) return 'period-urgent';
+  // Eid al-Fitr 2026 is ~30-31 March → urgent
+  if (/Eid period/i.test(p)) return 'period-urgent';
+  const d = _parsePeriodDate(p);
+  if (d) {
+    const diff = Math.ceil((d - _TODAY) / 86400000);
+    if (diff <= 0)  return 'period-expired';
+    if (diff <= 7)  return 'period-urgent';
+    if (diff <= 30) return 'period-soon';
+  }
+  return '';
+}
+
+// ── Booking badge ────────────────────────────────────────
+// Show "Reserve" badge when deal text contains booking signals
+// OR entry is in a typically-reservation-required category
+const BOOK_CATS = new Set(['Dining Events','Italian','Japanese','Latin','Korean','All Day Dining']);
+function bookTag(r) {
+  const bookKeywords = /\b(booking essential|reservation required|book (ahead|direct|now|online|a table)|advance book|pre-book|pre-reserv|reserv.*required|contact.*book|call.*reserv|limited seat|available on request)\b/i;
+  const hasSig = bookKeywords.test(r.deal);
+  const isFormal = BOOK_CATS.has(r.cat);
+  // Only badge formal dining categories or explicit signals in deal text
+  if (!hasSig && !isFormal) return '';
+  return '<span class="book-tag">Reserve</span>';
+}
+
+function render() {
+  let rows = DATA.filter(r => {
+    if (filter && r.cat !== filter) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      if (![r.venue,r.loc,r.deal,r.cat,r.saving,r.period].some(f=>f.toLowerCase().includes(q))) return false;
+    }
+    return true;
+  });
+  rows.sort((a,b) => {
+    const va = a[sortCol], vb = b[sortCol];
+    if (typeof va==='number') return sortAsc ? va-vb : vb-va;
+    return sortAsc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+  });
+  const tbody = document.getElementById('tableBody');
+  const empty = document.getElementById('emptyState');
+  document.getElementById('shownCount').textContent = rows.length;
+  if (!rows.length) { tbody.innerHTML=''; empty.style.display=''; return; }
+  empty.style.display = 'none';
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="td-num">${r.n}</td>
+      <td><span class="badge ${CAT_CLASS[r.cat]||'b-special'}">${r.cat}</span></td>
+      <td><div class="venue-name">${r.venue}${bookTag(r)}</div></td>
+      <td><div class="loc">${r.loc}</div></td>
+      <td><div class="deal">${r.deal}</div></td>
+      <td>${savingHtml(r.saving)}</td>
+      <td><span class="period ${periodClass(r.period)}">${r.period}</span></td>
+      <td>${igHtml(r.ig, r.venue)}</td>
+      <td>${refHtml(r.n)}</td>
+    </tr>`).join('');
+}
+
+document.getElementById('filterBar').addEventListener('click',e=>{
+  const btn = e.target.closest('.f-btn');
+  if (!btn) return;
+  const isActive = btn.classList.contains('active');
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
+  if (isActive) {
+    filter = '';   // toggle off → show all
+  } else {
+    btn.classList.add('active');
+    filter = btn.dataset.cat;
+  }
+  render();
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{ search=e.target.value; render(); });
+
+document.querySelectorAll('thead th[data-col]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const col = th.dataset.col;
+    if (sortCol===col) sortAsc=!sortAsc; else { sortCol=col; sortAsc=true; }
+    document.querySelectorAll('thead th').forEach(t=>{ t.classList.remove('sorted'); const ic=t.querySelector('.sort-icon'); if(ic) ic.textContent='↕'; });
+    th.classList.add('sorted');
+    const ic=th.querySelector('.sort-icon'); if(ic) ic.textContent=sortAsc?'↑':'↓';
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
